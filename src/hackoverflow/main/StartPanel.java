@@ -18,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
+import hackoverflow.popups.ImagePane;
+
 
 public class StartPanel  extends javax.swing.JPanel {
 	boolean isFinished = false;
