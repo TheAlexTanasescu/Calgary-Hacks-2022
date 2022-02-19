@@ -26,7 +26,7 @@ public class Habit {
 	 * Gives the current amount of EXP
 	 * @return curExp
 	 */
-	int getCurExp() {
+	int getHabitCurExp() {
 		return this.curExp;
 	}
 	
@@ -34,10 +34,14 @@ public class Habit {
 	 * Gives the current amount of EXP needed for next Level
 	 * @return levelExp
 	 */
-	int getLevelExp() {
+	int getHabitLevelExp() {
 		return this.levelExp;
 	}
 	
+	/**
+	 * Gets the level of the habit
+	 * @return
+	 */
 	int getHabitLevel() {
 		return this.level;
 	}
@@ -106,6 +110,10 @@ public class Habit {
 		this.levelExp = (int) Math.pow(inLevel, 1.5);
 	}
 	
+	/**
+	 * Sets the current EXP based on inExp
+	 * @param inExp
+	 */
 	void setHabitExp (int inExp) {
 		this.curExp = inExp;
 	}
@@ -114,10 +122,14 @@ public class Habit {
 	 * Adds an amount of EXP to current EXP
 	 * @param inExp
 	 */
-	void addExp (int inExp) {
+	void addHabitExp (int inExp) {
 		this.curExp += inExp;
 	}
 	
+	/**
+	 * Updates the Exp and level
+	 * @param inExp
+	 */
 	void updateHabitExp(int inExp) {
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
