@@ -18,21 +18,13 @@ import javax.swing.JFrame;
 
 
 public class PagePanel extends javax.swing.JPanel {
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -9178269319786112894L;
+
 	public PagePanel(JFrame frame) {
 		this.setLocation(0, 0);
 		this.setSize(this.getSize());
 		this.setBackground(Color.WHITE);
 		this.setVisible(true);
-	}
-	
-	public void paint(Graphics g) {
-		super.paint(g);
-		Graphics2D gtd = (Graphics2D) g;
-		
-		//gtd.drawImage(background, 0, 0, 1280, 720, null);
-
 	}
 
 }
