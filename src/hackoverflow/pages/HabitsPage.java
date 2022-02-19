@@ -1,6 +1,7 @@
 package hackoverflow.pages;
 
 import java.awt.Color;
+import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
@@ -10,6 +11,8 @@ public class HabitsPage extends PagePanel {
 	public HabitsPage(JFrame frame) {
 		super(frame);
 		this.setBackground(Color.LIGHT_GRAY);
+		
+		this.setLayout(new GridBagLayout());
 	}
 	
 	public void initButtons() {
