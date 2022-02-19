@@ -1,8 +1,12 @@
 package hackoverflow.main;
+import java.awt.Toolkit;
+import java.awt.Dimension;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import java.awt.*;
 
 import javax.swing.JFrame;
 import hackoverflow.pages.StartFrame;
+
 
 
 public class Main {

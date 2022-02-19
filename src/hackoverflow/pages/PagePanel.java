@@ -1,5 +1,6 @@
 package hackoverflow.pages;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
@@ -16,11 +17,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
-public class StartPanel extends javax.swing.JPanel {
+public class PagePanel extends javax.swing.JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public StartPanel(JFrame frame) {
-
+	public PagePanel(JFrame frame) {
+		this.setLocation(0, 0);
+		this.setSize(this.getSize());
+		this.setBackground(Color.WHITE);
+		this.setVisible(true);
 	}
 	
 	public void paint(Graphics g) {

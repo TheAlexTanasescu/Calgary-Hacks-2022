@@ -1,5 +1,14 @@
 package hackoverflow.pages;
 
-public class HabitsPage {
+import javax.swing.JFrame;
 
+public class HabitsPage extends PagePanel {
+
+	public HabitsPage(JFrame frame) {
+		super(frame);
+	}
+	
+	public void initButtons() {
+		
+	}
 }
