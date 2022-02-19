@@ -1,15 +1,21 @@
 package hackoverflow.main;
-import java.awt.Toolkit;
-import java.awt.Dimension;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import java.awt.*;
+
+import javax.swing.JFrame;
+import hackoverflow.pages.PageFrame;
+import hackoverflow.pages.PagePanel;
+
 
 public class Main {
 
-
-    public static void main(String[] args)
-    {
-
+	public final static int width = 480;
+	public final static int height = 720;
+	private final static String title= "Hackoverflow";
+	
+	
+    public static void main(String[] args) {
+	    PageFrame startFrame = new PageFrame(width, height, title);
+	 	PagePanel startPanel = new PagePanel(startFrame);
+	 	startFrame.add(startPanel);
     }
-    
 }
