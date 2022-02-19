@@ -1,0 +1,6 @@
+bin/*
+/bin/
+.DS_Store
+/Frequency.class
+/Game.class
+/Habit.class

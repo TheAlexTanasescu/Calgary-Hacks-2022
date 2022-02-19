@@ -1,6 +1,7 @@
+package hackoverflow.main;
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+//import java.awt.GridBagConstraints;
+//import java.awt.GridBagLayout;
 
 
 public class StartFrame extends javax.swing.JFrame {
@@ -24,4 +25,4 @@ public class StartFrame extends javax.swing.JFrame {
 	}
 }
     
-}
+

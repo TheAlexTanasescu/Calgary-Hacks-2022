@@ -1,3 +1,4 @@
+package hackoverflow.main;
 
 
 import java.awt.Button;
@@ -67,4 +68,4 @@ public class StartPanel  extends javax.swing.JPanel {
 	}
 }
     
-}
+
