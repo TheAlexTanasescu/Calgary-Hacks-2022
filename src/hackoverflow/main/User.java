@@ -23,6 +23,39 @@ public class User {
         this.name = name;
         this.avatarImage = avatarImage;
     }
+    
+    int getLevel() {
+    	return this.level;
+    }
+    
+    int getExperience() {
+    	return this.experience;
+    }
+    
+    String getName() {
+    	return this.name;
+    }
+    
+    String getAvatarImage() {
+    	return this.avatarImage;
+    }
+    
+    void setLevel(int levelToSet) {
+    	this.level = levelToSet;
+    }
+    
+    void setExperience(int experienceToSet) {
+    	this.experience = experienceToSet;
+    }
+    
+    void setName(String nameToSet) {
+    	this.name = nameToSet;
+    }
+    
+    void setAvatarImage(String imageToSet) {
+    	this.avatarImage = imageToSet;
+    }
+
 
 
     
