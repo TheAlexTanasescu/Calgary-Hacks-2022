@@ -1,3 +1,4 @@
+package hackoverflow.main;
 public class Habit {
 	String text;
 	Frequency freq;

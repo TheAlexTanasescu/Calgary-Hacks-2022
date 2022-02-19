@@ -1,3 +1,4 @@
+package hackoverflow.main;
 import java.awt.*;
 
 public class Game {
