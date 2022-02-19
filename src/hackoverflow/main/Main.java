@@ -9,7 +9,7 @@ import hackoverflow.pages.PagePanel;
 
 
 public class Main {
-
+	public HabitsPage hp;
 	public final static int width = 480;
 	public final static int height = 720;
 	private final static String title = "Hackoverflow";
@@ -20,7 +20,7 @@ public class Main {
 	 	PagePanel startPanel = new PagePanel(startFrame);
 	 	startFrame.add(startPanel);
 	 	
-	 	//test(startFrame, startPanel);
+	 	test(startFrame, startPanel);
     }
     
     private static void test(PageFrame frame, PagePanel panel) {
