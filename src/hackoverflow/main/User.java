@@ -1,4 +1,4 @@
-package src.hackoverflow.main;
+package hackoverflow.main;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
