@@ -1,4 +1,4 @@
-package hackoverflow.main;
+package hackoverflow.popups;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
