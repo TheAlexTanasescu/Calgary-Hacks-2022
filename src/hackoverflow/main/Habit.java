@@ -12,6 +12,8 @@ public class Habit {
 	private int level;
 	int curExp;
 	int levelExp;
+	int userExp;
+	int userLvl;
 	String title;
 	String desc;
 	Frequency freq;
@@ -23,7 +25,9 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	public Habit(String inTitle, String inDesc) {
+	public Habit(String inTitle, String inDesc, int uLvl, int uExp) {
+		userLvl = uLvl;
+		userExp = uExp;
 		setHabitTitle(inTitle);
 		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
@@ -168,9 +172,13 @@ public class Habit {
 		curExp += inExp;
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
+			userExp += 1;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
+		}
+		if(userExp >= 10) {
+			userLvl += 1;
 		}
 	}
 }

@@ -29,9 +29,13 @@ public class MainPage extends PagePanel {
 	private Button monthlyBtn;
 	private Button yearlyBtn;
 	private PageFrame frame;
+	int level;
+	int exp;
 
-	public MainPage(PageFrame frame) {
+	public MainPage(PageFrame frame, int l, int e) {
 		this.frame = frame;
+		level = l;
+		exp = e;
 		init();
 	}
 	

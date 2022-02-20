@@ -32,7 +32,13 @@ public class Main {
 
 	private static PageFrame startFrame;
 	
+	public static int lvl;
+	public static int exp;
+	public static final int maxExp = 10;
+	
     public static void main(String[] args) {
+    	lvl = 0;
+    	exp = 0;
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
 	    
@@ -43,15 +49,15 @@ public class Main {
     	StartPopup startPopup = new StartPopup();
 	    
 	    //Pages
-	    mPage = new MainPage(startFrame);
+	    mPage = new MainPage(startFrame, exp, exp);
 	    pPage = new ProfilePage(startFrame);
-	    hPage = new HabitsPage();
+	    hPage = new HabitsPage(lvl, exp);
 	    sPage = new ShopPage(startFrame);
 	    
-	    dlyPage = new DailyHabitsPage();
-	    wlyPage = new WeeklyHabitsPage();
-	    mlyPage = new MonthlyHabitsPage();
-	    ylyPage = new YearlyHabitsPage();
+	    dlyPage = new DailyHabitsPage(lvl, exp);
+	    wlyPage = new WeeklyHabitsPage(lvl, exp);
+	    mlyPage = new MonthlyHabitsPage(lvl, exp);
+	    ylyPage = new YearlyHabitsPage(lvl, exp);
 
 	 	startFrame.add(mPage);
 	 	startFrame.validate();

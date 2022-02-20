@@ -25,7 +25,7 @@ public class ImagePane {
 	
 	private static JOptionPane popup;
 
-	public ImagePane(String message, String title, User u, String icon, JPanel inPanel) {
+	public ImagePane(String message, String title, int uLvl, int uExp, String icon, JPanel inPanel) {
 		//popup = new JOptionPane();
 		
 		
@@ -35,10 +35,10 @@ public class ImagePane {
 		JTextArea description = new JTextArea(3,20);
 	    description.setLineWrap(true);
 	    description.setWrapStyleWord(true); 
-		JRadioButton checkBox1 = new JRadioButton("Daily");   
-        JRadioButton checkBox2 = new JRadioButton("Weekly");  
-        JRadioButton checkBox3 = new JRadioButton("Monthly");  
-        JRadioButton checkBox4 = new JRadioButton("Yearly");  
+//		JRadioButton checkBox1 = new JRadioButton("Daily");   
+//        JRadioButton checkBox2 = new JRadioButton("Weekly");  
+//        JRadioButton checkBox3 = new JRadioButton("Monthly");  
+//        JRadioButton checkBox4 = new JRadioButton("Yearly");  
 //        checkBox1.setBounds(100,100, 50,50); 
 //        checkBox2.setBounds(100,150, 50,50);  
 //        checkBox3.setBounds(100,100, 50,50);  
@@ -71,7 +71,7 @@ public class ImagePane {
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
 			System.out.println("WOW");
-			Habit habit = new Habit(habitTitle.getText(), description.getText());
+			Habit habit = new Habit(habitTitle.getText(), description.getText(), uLvl, uExp);
 			inPanel.add(habit.getHabitPanel());
 			inPanel.revalidate();
 			inPanel.repaint();
@@ -83,7 +83,5 @@ public class ImagePane {
 		} else {
 		    //System.out.println("Login canceled");
 		}
-
 	}
-	
 }
