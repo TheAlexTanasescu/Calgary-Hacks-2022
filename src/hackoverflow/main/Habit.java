@@ -26,7 +26,8 @@ public class Habit {
 		setHabitLevel(1);
 		this.levelExp = 0;
 		this.curExp = 0;
-		hPanel = new HabitPanel(title, 1, desc, 0);
+		int temp1 = getHabitLevelExp();
+		hPanel = new HabitPanel(title, 1, desc, 0, temp1);
 	}
 	
 	/**
@@ -152,7 +153,7 @@ public class Habit {
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
-			hp = new HabitPanel(title, level, desc, curExp);
+			hp = new HabitPanel(title, level, desc, curExp, levelExp);
 		}
 	}
 }
