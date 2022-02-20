@@ -25,8 +25,10 @@ public class HabitPanel extends JPanel {
 	private JLabel lvlLbl;
 	private Button completeBtn;
 	
-	public HabitPanel(String title, int level, String description, int EXP) {
+	public HabitPanel(String title, int level, String description, int EXP, int MaxEXP) {
+		
 		super();
+		
 		this.setSize(Main.width - 40, 150);
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
@@ -82,6 +84,7 @@ public class HabitPanel extends JPanel {
 			
 		//Progress Bar
 		prgBar = new JProgressBar();
+		prgBar.setMaximum(MaxEXP);
 		prgBar.setValue(EXP);
 		prgBar.setStringPainted(true);
 		prgBar.setSize(20, 100);
