@@ -19,9 +19,9 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	public Habit(String inTitle, String inDesc, Frequency inFreq) {
+	public Habit(String inTitle, String inDesc) {
 		setHabitTitle(inTitle);
-		setHabitFrequency(inFreq);
+		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(1);
 		this.levelExp = 0;
