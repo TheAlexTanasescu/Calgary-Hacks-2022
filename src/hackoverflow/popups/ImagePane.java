@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 public class ImagePane {
 	
 	private static JOptionPane popup;
-	public ImagePane(String message, String title, User u, String icon, HabitsPage hPage) {
+	public ImagePane(String message, String title, User u, String icon) {
 		//popup = new JOptionPane();
 		
 		
