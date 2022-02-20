@@ -2,6 +2,7 @@ package hackoverflow.pages;
 
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import java.awt.Button;
 import java.awt.GridBagConstraints;
@@ -9,6 +10,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import hackoverflow.main.Frequency;
+import hackoverflow.main.Main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,7 +66,6 @@ public class MainPage extends PagePanel {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		// Top pane
 		TopPanel tPanel = new TopPanel(this);
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 1;
@@ -132,15 +133,29 @@ public class MainPage extends PagePanel {
 	}
 	
 	/**
-	 * Initializes the frequency buttons
+	 * 
+	 * 
 	 */
 	private void initButtons() {
+		//this.setLayout(null);
+		this.setVisible(true);
 		createDailyBtn();
 		createWeeklyBtn();
 		createMonthlyBtn();
 		createYearlyBtn();
 	}
 	
+	// TEST
+	// Add Habit to a fixed location
+	private void addHabit(PageFrame frame) {
+		HabitPanel h = new HabitPanel(title, level, desc, curExp);
+		h.setBounds(10,100, Main.width - 40, 150);
+		frame.validate();
+	}
+	
+	/**
+	 * Create Button for daily habits
+	 */
 	private void createDailyBtn() {
 		dailyBtn = new Button("Daily");
 		dailyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -151,6 +166,9 @@ public class MainPage extends PagePanel {
 	    });
 	}
 	
+	/**
+	 * Create Button for weekly habits
+	 */
 	private void createWeeklyBtn() {
 		weeklyBtn = new Button("Weekly");
 		weeklyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -160,6 +178,10 @@ public class MainPage extends PagePanel {
 	        }
 	    });
 	}
+	
+	/**
+	 * Create Button for monthly habits
+	 */
 	private void createMonthlyBtn() {
 		monthlyBtn = new Button("Monthly");
 		monthlyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -170,6 +192,9 @@ public class MainPage extends PagePanel {
 	    });
 	}
 	
+	/**
+	 * Create Button for yearly habits
+	 */
 	private void createYearlyBtn() {
 		yearlyBtn = new Button("Yearly");
 		yearlyBtn.setSize(freqBtnWidth, freqBtnHeight);
