@@ -64,7 +64,7 @@ public class ProfilePage extends PagePanel {
         backBtn.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                Main.switchToHabitsPage(pg);
+                Main.switchToMainPage(pg);
             }
         });
         shopBtn.addActionListener(new ActionListener() {

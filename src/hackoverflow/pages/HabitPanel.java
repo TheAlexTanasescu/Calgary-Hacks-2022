@@ -12,17 +12,21 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
+import hackoverflow.main.Habit;
+import hackoverflow.main.Main;
+
 public class HabitPanel extends JPanel {
 
-	public HabitPanel() {
+	public HabitPanel(String title, int level, String description, int EXP) {
 		super();
+		this.setSize(Main.width - 40, 150);
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
 		
 		GridBagConstraints c = new GridBagConstraints();
 		
 		// Title
-		JLabel titleLbl = new JLabel("Title");
+		JLabel titleLbl = new JLabel(title);
 		c.weightx = 0.15;
 		c.gridwidth = 1;
 		c.gridx = 0;
@@ -41,8 +45,11 @@ public class HabitPanel extends JPanel {
 		c.anchor = GridBagConstraints.PAGE_START;
 		this.add(empty, c);
 		
+		//Conversion of Level from integer to String.
+		String lvl = String.valueOf(level);
+		
 		// Level
-		JLabel lvlLbl = new JLabel("lvl");
+		JLabel lvlLbl = new JLabel(lvl);
 		c.weightx = 0.15;
 		c.gridwidth = 1;
 		c.insets = new Insets(0,2,2,2);
@@ -67,6 +74,8 @@ public class HabitPanel extends JPanel {
 			
 		//Progress Bar
 		JProgressBar prgBar = new JProgressBar();
+		prgBar.setValue(EXP);
+		prgBar.setStringPainted(true);
 		prgBar.setSize(20, 100);
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.7;
