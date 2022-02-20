@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PagePanel;
+import hackoverflow.pages.PageProfile;
+
 
 
 public class Main {
@@ -20,11 +22,14 @@ public class Main {
 	 	PagePanel startPanel = new PagePanel(startFrame);
 	 	startFrame.add(startPanel);
 	 	
-	 	//test(startFrame, startPanel);
+	 	
+	 	
+	 	test(startFrame, startPanel);
     }
     
     private static void test(PageFrame frame, PagePanel panel) {
+    	
     	frame.remove(panel);
-    	frame.add(new HabitsPage(frame));
+    	frame.add(new PageProfile(frame));
     }
 }
