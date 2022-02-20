@@ -30,7 +30,7 @@ public class Habit {
 		setHabitLevel(1);
 		setHabitLevelExp(level);
 		this.curExp = 0;
-		
+		Main.exp += 1;
 		int temp1 = getHabitLevelExp();
 		int temp2 = getHabitLevel();
 		hPanel = new HabitPanel(title, temp2, desc, 0, temp1);
@@ -168,11 +168,18 @@ public class Habit {
 		curExp += inExp;
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
+			Main.exp += 1;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
 			ProfilePage.count += 50;
 			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
+		}
+		System.out.println(Main.exp);
+		if(Main.exp >= 10) {
+			Main.exp = 0;
+			Main.lvl += 1;
+			System.out.println("Level Up");
 		}
 	}
 }

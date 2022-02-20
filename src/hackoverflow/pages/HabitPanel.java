@@ -20,15 +20,12 @@ import hackoverflow.main.Main;
 public class HabitPanel extends JPanel {
 	private static final long serialVersionUID = 4842251332912377960L;
 
-	private Habit habit;
 	private JProgressBar prgBar;
 	private JLabel lvlLbl;
 	private Button completeBtn;
 	
 	public HabitPanel(String title, int level, String description, int EXP, int MaxEXP) {
-		
 		super();
-		
 		this.setSize(Main.width - 40, 150);
 		this.setMaximumSize(new Dimension(Main.width, 150));
 		this.setBorder(BorderFactory.createLineBorder(Color.black));

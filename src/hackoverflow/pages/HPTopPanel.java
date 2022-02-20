@@ -18,7 +18,7 @@ import hackoverflow.popups.ImagePane;
 public class HPTopPanel extends JPanel {
 	private static final long serialVersionUID = 5758091766734972758L;
 	
-	private String imgPath = "res/pet_justin1.png";
+	private String imgPath = "res/pet_moomask1.png";
 	
 	public HPTopPanel(PagePanel currentPanel, JPanel inPanel) {
 		super();
