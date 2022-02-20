@@ -23,17 +23,14 @@ public class Main {
 	    //Panel
 	 	PagePanel startPanel = new PagePanel();
 	 	startFrame.add(new HabitsPage(startFrame));
-	 	startFrame.validate();
 	 	
-	 	//Layout
-	 	PageLayout layout = new PageLayout();
-	 	layout.setGrid(startPanel);
+	 	startFrame.validate();
 	 	
     }
     
-    private static void switchToHabitsPage(PageFrame frame, PagePanel panel) {
-    	frame.remove(panel);
-    	frame.add(new HabitsPage(frame));
+    public static void switchPanels(PageFrame frame, PagePanel currentPanel, PagePanel newPanel) {
+    	frame.remove(currentPanel);
+    	frame.add(newPanel);
     	frame.validate();
     }
 }
