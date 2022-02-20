@@ -14,12 +14,12 @@ public class PageFrame extends javax.swing.JFrame {
 	public PageFrame(int width, int height, String title) {	
 		// Initialize
 		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		hp = new HabitsPage(this);
+		
 		this.setLocation(0, 0);
 		this.setSize(this.getSize());
         this.setBackground(Color.LIGHT_GRAY);
         this.setVisible(true);
-        this.add(hp);
+       
 
 		//this.setLocation((int)(screenSize.getWidth()/2 - this.getSize().getWidth()/2), (int)(screenSize.getHeight()/2 - this.getSize().getHeight()/2));
 		//this.setResizable(false);

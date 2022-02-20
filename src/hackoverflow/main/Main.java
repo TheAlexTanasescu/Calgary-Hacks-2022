@@ -24,12 +24,13 @@ public class Main {
 		startFrame.setResizable(false);
 		startFrame.setTitle("HackOverflow");
 		startFrame.setVisible(true);
+		startFrame.add(new HabitsPage(startFrame));
 	 	
 	 	//test(startFrame, startPanel);
     }
     
-    private static void test(PageFrame frame, PagePanel panel) {
-    	frame.remove(panel);
-    	frame.add(new HabitsPage(frame));
-    }
+   // private static void test(PageFrame frame, PagePanel panel) {
+    //	frame.remove(panel);
+    //	frame.add(new HabitsPage(frame));
+    //}
 }
