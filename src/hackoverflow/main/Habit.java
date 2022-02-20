@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import hackoverflow.pages.HabitPanel;
 import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.HabitPanel;
-
+//Added jar file
 public class Habit {
 
 	private int level;
