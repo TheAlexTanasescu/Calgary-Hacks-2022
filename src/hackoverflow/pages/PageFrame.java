@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 
 
 public class PageFrame extends javax.swing.JFrame {
+
     private static final long serialVersionUID = 1L;
     private PagePanel panel;
     
@@ -21,4 +22,5 @@ public class PageFrame extends javax.swing.JFrame {
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
 }
