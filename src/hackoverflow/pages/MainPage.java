@@ -2,7 +2,6 @@ package hackoverflow.pages;
 
 
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import java.awt.Button;
 import java.awt.GridBagConstraints;
@@ -10,7 +9,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import hackoverflow.main.Frequency;
-import hackoverflow.main.Main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -299,4 +297,3 @@ public class MainPage extends PagePanel {
 		}
 	}
 }
-

@@ -9,6 +9,7 @@ import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
 import hackoverflow.popups.InstructionPopup;
+import hackoverflow.popups.StartPopup;
 
 
 public class Main {
@@ -23,9 +24,12 @@ public class Main {
     public static void main(String[] args) {
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
+	    
+	   
 
 	    //Panel
     	InstructionPopup popup = new InstructionPopup();
+    	 StartPopup startPopup = new StartPopup();
 	    
 	    //Panel
 	    mPage = new MainPage(startFrame, "Title", "Description", null);
