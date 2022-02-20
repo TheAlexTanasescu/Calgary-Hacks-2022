@@ -1,7 +1,10 @@
 package hackoverflow.main;
 import hackoverflow.pages.HabitPanel;
 
+import hackoverflow.pages.HabitPanel;
+
 public class Habit {
+	//private HabitPanel hPanel;
 	private int level;
 	int curExp;
 	int levelExp;

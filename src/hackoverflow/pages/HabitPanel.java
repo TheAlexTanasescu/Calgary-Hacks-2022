@@ -12,10 +12,14 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
+import hackoverflow.main.Habit;
+import hackoverflow.main.Main;
+
 public class HabitPanel extends JPanel {
 
 	public HabitPanel(String title, int level, String description, int EXP) {
 		super();
+		this.setSize(Main.width - 40, 150);
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
 		

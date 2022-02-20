@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 public class ImagePane {
 	
 	private static JOptionPane popup;
+
 	public ImagePane(String message, String title, User u, String icon) {
 		//popup = new JOptionPane();
 		
@@ -96,5 +97,7 @@ public class ImagePane {
 		} else {
 		    //System.out.println("Login canceled");
 		}
+
 	}
+	
 }
