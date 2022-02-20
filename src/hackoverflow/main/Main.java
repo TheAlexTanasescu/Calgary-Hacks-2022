@@ -25,7 +25,7 @@ public class Main {
 	    //Panel
 	 	PagePanel startPanel = new PagePanel();
 	 	startFrame.add(new HabitsPage(startFrame, "Title", "Description", null));
-	    hPage = new HabitsPage(startFrame);
+	    hPage = new HabitsPage(startFrame, "Title", "Description", null);
 	    pPage = new ProfilePage(startFrame);
 	 	startFrame.add(hPage);
 	 	startFrame.validate();
