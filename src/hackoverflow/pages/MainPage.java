@@ -32,10 +32,8 @@ public class MainPage extends PagePanel {
 	int level;
 	int exp;
 
-	public MainPage(PageFrame frame, int l, int e) {
+	public MainPage(PageFrame frame) {
 		this.frame = frame;
-		level = l;
-		exp = e;
 		init();
 	}
 	

@@ -25,9 +25,8 @@ public class ImagePane {
 	
 	private static JOptionPane popup;
 
-	public ImagePane(String message, String title, int uLvl, int uExp, String icon, JPanel inPanel) {
+	public ImagePane(String message, String title, User u, String icon, JPanel inPanel) {
 		//popup = new JOptionPane();
-		
 		
 	    //String name=popup.showInputDialog(null, "Habit to Add", "Add Habit", JOptionPane.INFORMATION_MESSAGE);
 	    
@@ -71,7 +70,7 @@ public class ImagePane {
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
 			System.out.println("WOW");
-			Habit habit = new Habit(habitTitle.getText(), description.getText(), uLvl, uExp);
+			Habit habit = new Habit(habitTitle.getText(), description.getText());
 			inPanel.add(habit.getHabitPanel());
 			inPanel.revalidate();
 			inPanel.repaint();
