@@ -6,6 +6,7 @@ import java.awt.Color;
 
 import java.awt.*;  
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.GridBagConstraints;
@@ -54,7 +55,16 @@ public class HabitsPage extends PagePanel {
 	        }  
 	    });
 		
-		
+		String[] optionsToChoose = {"Apple", "Orange", "Banana", "Pineapple", "None of the listed"};
+
+		JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);
+        jComboBox.setBounds(150, 40, 150, 20);
+
+        frame.add(jComboBox);
+        
+        //frame.setLayout(null);
+        //frame.setSize(350, 250);
+        //frame.setVisible(true);
 		
 		Button addHabit = new Button("Add Habit");
 		addHabit.setBounds(320, 30, 100, 40);
