@@ -49,7 +49,7 @@ public class ProfilePage extends PagePanel {
         String petNameThing = "Current Pet: " + petName;
         petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
         tokenLabel = new JLabel("Tokens: " + Integer.toString(count), SwingConstants.CENTER);
-        tokenLabel.setBorder(new EmptyBorder(0,0,50,0));
+        tokenLabel.setBorder(new EmptyBorder(0,0,80,100));
         setLayout(new BorderLayout(0, 20));
         
         
@@ -60,6 +60,7 @@ public class ProfilePage extends PagePanel {
         petPanel.add(imageLabel);
         
         petPanel.add(changeBtn);
+        petPanel.setBorder(new EmptyBorder(0, 50, 0, 0));
         
         petPanel.setLayout(new BoxLayout(petPanel, BoxLayout.Y_AXIS));
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
