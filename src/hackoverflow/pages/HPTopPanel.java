@@ -82,10 +82,14 @@ public class HPTopPanel extends JPanel {
 		c.gridheight = 1;
 		c.anchor = GridBagConstraints.FIRST_LINE_END;
 		c.insets = new Insets(10, 40, 10, 5);
+		JPanel page = this;
 		addBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		new ImagePane(null, null, null, imgPath);
-	        }  
+	    		new ImagePane(null, null, null, imgPath, inPanel);
+	    		
+	    		page.validate();
+	    		page.repaint();
+	        }
 	    });
 		this.add(addBtn, c);
 	}

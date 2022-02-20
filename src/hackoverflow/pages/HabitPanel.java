@@ -60,7 +60,7 @@ public class HabitPanel extends JPanel {
 		this.add(lvlLbl, c);
 		
 		// Description
-		JTextField descTxtField = new JTextField("Description");
+		JTextField descTxtField = new JTextField(description);
 		descTxtField.setEditable(false);
 		descTxtField.setSize(20, 40);
 		c.fill = GridBagConstraints.HORIZONTAL;

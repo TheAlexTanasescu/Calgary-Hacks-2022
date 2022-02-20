@@ -1,8 +1,10 @@
 package hackoverflow.popups;
 import hackoverflow.main.*;
+import hackoverflow.pages.HabitPanel;
 import hackoverflow.pages.ProfilePage;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
@@ -22,7 +25,7 @@ public class ImagePane {
 	
 	private static JOptionPane popup;
 
-	public ImagePane(String message, String title, User u, String icon) {
+	public ImagePane(String message, String title, User u, String icon, JPanel inPanel) {
 		//popup = new JOptionPane();
 		
 		
@@ -42,7 +45,7 @@ public class ImagePane {
         checkBox4.setBounds(100,150, 50,50);  
         
         
-        ButtonGroup bg=new ButtonGroup();    
+        ButtonGroup bg = new ButtonGroup();    
         bg.add(checkBox1);
         bg.add(checkBox2); 
         bg.add(checkBox3);
@@ -53,27 +56,6 @@ public class ImagePane {
 		    "Frequency:", checkBox1, checkBox2, checkBox3, checkBox4
 		    
 		};
-		
-		String tempTitle = habitTitle.getText();
-		System.out.println(habitTitle.getText());
-		String tempDescription = description.getText();
-		System.out.println(description.getText());
-		Frequency frequency = null;
-		if(checkBox1.isSelected()) {
-			frequency = Frequency.Daily;
-			System.out.println(1);
-		} else if(checkBox2.isSelected()) {
-			frequency = Frequency.Weekly;
-			System.out.println(2);
-		} else if(checkBox3.isSelected()) {
-			frequency = Frequency.Monthly;
-			System.out.println(3);
-		} else if(checkBox4.isSelected()) {
-			frequency = Frequency.Anually;
-			System.out.println(4);
-		}
-		
-		
 
 		String[] options = new String[2];
 		options[0] = "Add Habit";
@@ -88,8 +70,22 @@ public class ImagePane {
 		//int option = JOptionPane.showConfirmDialog(null, messageArr, "Add New Habit", JOptionPane.OK_CANCEL_OPTION);
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
+			System.out.println("WOW");
+			Frequency frequency = null;
+			if(checkBox1.isSelected()) {
+				frequency = Frequency.Daily;
+			} else if(checkBox2.isSelected()) {
+				frequency = Frequency.Weekly;
+			} else if(checkBox3.isSelected()) {
+				frequency = Frequency.Monthly;
+			} else if(checkBox4.isSelected()) {
+				frequency = Frequency.Anually;
+			}
+			Habit habit = new Habit(habitTitle.getText(), description.getText(), frequency);
+			inPanel.add(habit.getHabitPanel());
+			inPanel.validate();
+			inPanel.repaint();
 		    if (habitTitle.getText().equals("h") && description.getText().equals("h")) {
-		    	Habit habit = new Habit(tempTitle, tempDescription, frequency);
 		        //System.out.println("Login successful");
 		    } else {
 		        //System.out.println("login failed");

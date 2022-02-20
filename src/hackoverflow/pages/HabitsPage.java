@@ -34,6 +34,7 @@ public class HabitsPage extends PagePanel {
 		
 		// Top pane
 		HPTopPanel tPanel = new HPTopPanel(this, inPanel);
+
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 1;
 		c.weighty = 0.1;
@@ -44,24 +45,27 @@ public class HabitsPage extends PagePanel {
 		c.insets = new Insets(0, 0, 0, 0);
 		this.add(tPanel, c);
 		
-		//Scroll Pane
 		
+		//Scroll Pane
 		inPanel.setBackground(Color.WHITE);
 		inPanel.setLayout(new BoxLayout(inPanel, BoxLayout.PAGE_AXIS));
+		inPanel.validate();
+		inPanel.repaint();
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setViewportView(inPanel);
+		scrollPane.validate();
+		scrollPane.repaint();
 		// Test Habits
-		/*
-		inPanel.add(new HabitPanel(name, flags, name, flags));
-		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-		inPanel.add(new HabitPanel());
-		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-		inPanel.add(new HabitPanel());
-		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-		inPanel.add(new HabitPanel());
-		inPanel.add(new HabitPanel());
-		inPanel.add(new HabitPanel());*/
+//		inPanel.add(new HabitPanel("Read", 0, "Read More", 0));
+//		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+//		inPanel.add(new HabitPanel());
+//		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+//		inPanel.add(new HabitPanel());
+//		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+//		inPanel.add(new HabitPanel());
+//		inPanel.add(new HabitPanel());
+//		inPanel.add(new HabitPanel());
 		// End test
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.7;
@@ -73,6 +77,8 @@ public class HabitsPage extends PagePanel {
 		c.insets = new Insets(10, 10, 0, 10);
 		c.anchor = GridBagConstraints.CENTER;
 		this.add(scrollPane, c);
+		this.validate();
+		this.repaint();
 	}
 
 
