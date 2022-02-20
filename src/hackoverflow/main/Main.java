@@ -1,11 +1,9 @@
 package hackoverflow.main;
 import java.awt.*;
 
-import javax.swing.JFrame;
-
+import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.MainPage;
 import hackoverflow.pages.PageFrame;
-import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.ShopPage;
@@ -20,7 +18,9 @@ public class Main {
 	
 	private static MainPage mPage;
 	private static ProfilePage pPage;
+	private static HabitsPage hPage;
 	private static ShopPage sPage;
+
 	private static PageFrame startFrame;
 	
     public static void main(String[] args) {
@@ -31,12 +31,14 @@ public class Main {
 
 	    //Panel
     	InstructionPopup popup = new InstructionPopup();
-    	 StartPopup startPopup = new StartPopup();
+    	StartPopup startPopup = new StartPopup();
 	    
-	    //Panel
-	    mPage = new MainPage(startFrame, "Title", "Description", null);
+	    //Pages
+	    mPage = new MainPage(startFrame);
 	    pPage = new ProfilePage(startFrame);
+	    hPage = new HabitsPage(startFrame);
 	    sPage = new ShopPage(startFrame);
+
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
 	 	
@@ -54,23 +56,36 @@ public class Main {
     }
     
     /**
-     * Switch from the currentPage to the Habits page
+     * Switch from the currentPage to the Main page
      * @param currentPage the current page
      */
-    public static void switchToHabitsPage(PagePanel currentPage) {
+    public static void switchToMainPage(PagePanel currentPage) {
     	startFrame.remove(currentPage);
     	startFrame.add(mPage);
     	mPage.repaint();
     	startFrame.validate();
     }
     
+    /**
+     * Switch from the currentPage to the Habits page
+     * @param currentPage the current page
+     */
+    public static void switchToHabitsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(hPage);
+    	hPage.repaint();
+    	startFrame.validate();
+    }
+    
+    /**
+     * Switch from the currentPage to the Shop page
+     * @param currentPage the current page
+     */
     public static void switchToShopsPage(PagePanel currentPage) {
     	startFrame.remove(currentPage);
     	startFrame.add(sPage);
     	sPage.repaint();
     	startFrame.validate();
     }
-    
-    
 
 }
