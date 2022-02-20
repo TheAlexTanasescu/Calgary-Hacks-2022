@@ -1,6 +1,5 @@
 package hackoverflow.main;
-
-import javax.swing.JLabel;
+import hackoverflow.pages.HabitPanel;
 
 public class Habit {
 	private int level;
@@ -9,6 +8,7 @@ public class Habit {
 	String title;
 	String desc;
 	Frequency freq;
+	HabitPanel hPanel;
 	
 	/**
 	 * Create a new Habit 
@@ -16,13 +16,14 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	Habit(String inTitle, String inDesc, Frequency inFreq) {
+	public Habit(String inTitle, String inDesc, Frequency inFreq) {
 		setHabitTitle(inTitle);
 		setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(0);
 		this.levelExp = 0;
 		this.curExp = 0;
+		hPanel = new HabitPanel(title, level, desc, 0);
 	}
 	
 	/**
@@ -71,6 +72,15 @@ public class Habit {
 	 */
 	Frequency getHabitFrequency() {
 		return this.freq;
+	}
+	
+	/**
+	 * Gives the HabitPanel
+	 * @param hp
+	 * @return
+	 */
+	HabitPanel getHabitPanel(HabitPanel hp) {
+		return hPanel;
 	}
 	
 	/**
@@ -133,12 +143,13 @@ public class Habit {
 	 * Updates the Exp and level
 	 * @param inExp
 	 */
-	void updateHabitExp(int inExp) {
+	void updateHabitExp(int inExp, HabitPanel hp) {
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
+			hp = new HabitPanel(title, level, desc, curExp);
 		}
 	}
 }

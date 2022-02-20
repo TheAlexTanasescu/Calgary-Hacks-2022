@@ -1,11 +1,16 @@
 package hackoverflow.popups;
 import hackoverflow.main.*;
+import hackoverflow.pages.ProfilePage;
 
+import java.awt.BorderLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -13,12 +18,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ImagePane 
-{
+public class ImagePane {
 	
 	private static JOptionPane popup;
-	public static void main(String message, String title, String[] args, User u, String icon)
-	{
+	public ImagePane(String message, String title, User u, String icon, HabitsPage hPage) {
 		//popup = new JOptionPane();
 		
 		
@@ -49,11 +52,31 @@ public class ImagePane
 		    "Frequency:", checkBox1, checkBox2, checkBox3, checkBox4
 		    
 		};
+		
+		String tempTitle = habitTitle.getText();
+		System.out.println(habitTitle.getText());
+		String tempDescription = description.getText();
+		System.out.println(description.getText());
+		Frequency frequency = null;
+		if(checkBox1.isSelected()) {
+			frequency = Frequency.Daily;
+			System.out.println(1);
+		} else if(checkBox2.isSelected()) {
+			frequency = Frequency.Weekly;
+			System.out.println(2);
+		} else if(checkBox3.isSelected()) {
+			frequency = Frequency.Monthly;
+			System.out.println(3);
+		} else if(checkBox4.isSelected()) {
+			frequency = Frequency.Anually;
+			System.out.println(4);
+		}
+		
+		
 
 		String[] options = new String[2];
 		options[0] = "Add Habit";
 		options[1] = "Cancel";
-		
 		
 		ImageIcon petIcon = new ImageIcon(icon);
 		Image img = petIcon.getImage();
@@ -65,6 +88,7 @@ public class ImagePane
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
 		    if (habitTitle.getText().equals("h") && description.getText().equals("h")) {
+		    	Habit habit = new Habit(tempTitle, tempDescription, frequency);
 		        //System.out.println("Login successful");
 		    } else {
 		        //System.out.println("login failed");
@@ -72,8 +96,5 @@ public class ImagePane
 		} else {
 		    //System.out.println("Login canceled");
 		}
-	   
-
-		
 	}
 }
