@@ -26,5 +26,6 @@ public class Main {
     private static void test(PageFrame frame, PagePanel panel) {
     	frame.remove(panel);
     	frame.add(new HabitsPage(frame));
+    	frame.validate();
     }
 }
