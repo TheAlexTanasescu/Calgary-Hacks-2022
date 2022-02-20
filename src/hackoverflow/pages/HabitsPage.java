@@ -70,6 +70,23 @@ public class HabitsPage extends PagePanel {
 		
 		// Top pane
 		JPanel topPanel = new JPanel();
+		
+		Button profile = new Button("Profile");
+		//topPanel.setBounds(320, 30, 200, 40);
+		//topPanel.add(addHabit);
+		//this.add(addHabit);
+		c.fill = GridBagConstraints.HORIZONTAL;
+//		gb.weightx = 0.5;
+//		gb.gridx = 1;
+//		gb.gridy = -1;
+		topPanel.add(profile, c);
+		profile.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.println("Profile");
+	    		//ImagePane.main("", "", null, null, "res/pet_moomask3.png");
+	        }
+	    });
+		
 		topPanel.add(new JLabel("Top Panel"));
 		topPanel.setSize(Main.width, 200);
 		c.fill = GridBagConstraints.BOTH;
@@ -81,6 +98,21 @@ public class HabitsPage extends PagePanel {
 		c.anchor = GridBagConstraints.PAGE_START;
 		c.insets = new Insets(0, 0, 5, 0);
 		this.add(topPanel, c);
+		
+		Button addHabit = new Button("Add Habit");
+		//topPanel.setBounds(320, 30, 200, 40);
+		//topPanel.add(addHabit);
+		//this.add(addHabit);
+		c.fill = GridBagConstraints.HORIZONTAL;
+//		gb.weightx = 0.5;
+//		gb.gridx = 1;
+//		gb.gridy = -1;
+		topPanel.add(addHabit, c);
+		addHabit.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		ImagePane.main("", "", null, null, "res/pet_moomask3.png");
+	        }
+	    });
 		
 		// Daily button
 		c.fill = GridBagConstraints.BOTH;
