@@ -1,6 +1,7 @@
 package hackoverflow.main;
 import java.awt.*;
 
+import hackoverflow.pages.ChangePetPage;
 import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.MainPage;
 import hackoverflow.pages.PageFrame;
@@ -20,6 +21,7 @@ public class Main {
 	private static ProfilePage pPage;
 	private static HabitsPage hPage;
 	private static ShopPage sPage;
+	private static ChangePetPage cPage;
 
 	private static PageFrame startFrame;
 	
@@ -41,6 +43,7 @@ public class Main {
 	    pPage = new ProfilePage();
 	    hPage = new HabitsPage(startFrame);
 	    sPage = new ShopPage();
+	    cPage = new ChangePetPage();
 
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
@@ -88,6 +91,13 @@ public class Main {
     	startFrame.remove(currentPage);
     	startFrame.add(sPage);
     	sPage.repaint();
+    	startFrame.validate();
+    }
+    
+    public static void switchToChangePetPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(cPage);
+    	cPage.repaint();
     	startFrame.validate();
     }
 

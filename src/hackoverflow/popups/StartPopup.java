@@ -9,9 +9,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class StartPopup {
+import hackoverflow.pages.PagePanel;
+
+public class StartPopup extends PagePanel {
 	
-	private static JOptionPane startPopup;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6574452451327197543L;
+	//private static JOptionPane startPopup;
 	
 	public StartPopup()
 	{
@@ -61,7 +67,6 @@ public class StartPopup {
 		    "Habpet:\n", checkBox1,first, checkBox2, second, checkBox3, third, checkBox4, fourth
 		    
 		};
-		
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 	}
 

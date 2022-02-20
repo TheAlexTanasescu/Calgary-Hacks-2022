@@ -33,7 +33,7 @@ public class ShopPage extends PagePanel{
 	public ShopPage() 
 	{
 		
-		   
+		JPanel panel = new JPanel();   
 		  
 		
 	
@@ -70,20 +70,36 @@ public class ShopPage extends PagePanel{
 		JLabel price4 = new JLabel("5000 Tokens", SwingConstants.CENTER);
 
 		
+		JButton backBtn = new JButton("Back");
+		this.setLayout(new BorderLayout(0, 15)); 
+		JLabel filler = new JLabel(" ");
+		JLabel filler2 = new JLabel(" ");
+		JLabel filler3 = new JLabel(" ");
+		JLabel filler4 = new JLabel(" ");
+		this.add(backBtn, BorderLayout.WEST);
+		this.add(panel, BorderLayout.CENTER);
 		
+		ShopPage pg = this;
+		 backBtn.addActionListener(new ActionListener() {
+
+	            public void actionPerformed(ActionEvent e) {
+	                Main.switchToProfilePage(pg);
+	            }
+	        });
+		//this.add(filler3, BorderLayout.EAST);
 		
-		this.add(btn1); 
-		this.add(btn2); 
-		this.add(price1);
-		this.add(price2);
-		this.add(btn3);  
-		this.add(btn4); 
-		this.add(price3);
-		this.add(price4);
+		panel.add(btn1); 
+		panel.add(btn2); 
+		panel.add(price1);
+		panel.add(price2);
+		panel.add(btn3);  
+		panel.add(btn4); 
+		panel.add(price3);
+		panel.add(price4);
 		
-		this.setLayout(new GridLayout(4,2)); 
-		this.setSize(480,720);    
-		this.setVisible(true);  
+		panel.setLayout(new GridLayout(4,2)); 
+		panel.setSize(480,720);    
+		panel.setVisible(true);  
 		
 		
 		
