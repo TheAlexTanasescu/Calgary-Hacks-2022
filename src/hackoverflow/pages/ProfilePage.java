@@ -3,6 +3,7 @@ package hackoverflow.pages;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -31,6 +32,8 @@ public class ProfilePage extends PagePanel {
 		public static JLabel petNameLbl;
 		public static int count = 0;
 		public static JLabel tokenLabel;
+		public static String playerName;
+		private static JLabel label;
 		
 	public ProfilePage() {            
         
@@ -38,7 +41,7 @@ public class ProfilePage extends PagePanel {
 		petName = getName();
 
 		String nameThing = StartPopup.playerName + "'s Profile";
-        JLabel label = new JLabel(nameThing, SwingConstants.CENTER);
+        label = new JLabel(nameThing, SwingConstants.CENTER);
         label.setFont(new Font("Verdana", Font.PLAIN, 36));
         
         JButton backBtn = new JButton("Back");
@@ -49,7 +52,7 @@ public class ProfilePage extends PagePanel {
         String petNameThing = "Current Pet: " + petName;
         petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
         tokenLabel = new JLabel("Tokens: " + Integer.toString(count), SwingConstants.CENTER);
-        tokenLabel.setBorder(new EmptyBorder(0,0,50,0));
+        tokenLabel.setBorder(new EmptyBorder(0,0,80,0));
         setLayout(new BorderLayout(0, 20));
         
         
@@ -60,6 +63,7 @@ public class ProfilePage extends PagePanel {
         petPanel.add(imageLabel);
         
         petPanel.add(changeBtn);
+        petPanel.setBorder(new EmptyBorder(0, 50, 0, 0));
         
         petPanel.setLayout(new BoxLayout(petPanel, BoxLayout.Y_AXIS));
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -128,6 +132,23 @@ public class ProfilePage extends PagePanel {
 	public  void setName(String nameToChange)
 	{
 		petNameLbl.setText(nameToChange);
+	}
+	
+	@Override
+	  protected void paintComponent(Graphics g) {
+		ImageIcon backImg = new ImageIcon("res/bghd.png");
+		Image img = backImg.getImage();
+		//Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
+	    super.paintComponent(g);
+	    g.drawImage(img, 0, 0, null);
+	}
+	
+	public static void changePlayerName(String name) {
+		
+		label.setText(name + "'s Profile");
+		
+		
+		
 	}
 
 

@@ -11,7 +11,7 @@ public class PagePanel extends javax.swing.JPanel {
 		this.setSize(this.getSize());
 		this.setBackground(Color.WHITE);
 		this.setVisible(true);
-		System.out.println("Panel");
+	
 	}
 
 }

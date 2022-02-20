@@ -47,13 +47,14 @@ public class Main {
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
 
+	    pPage = new ProfilePage();
 	    //Panel
     	new StartPopup();
 	    
 	    mPage = new MainPage(startFrame);
-	    pPage = new ProfilePage();
 	    hPage = new HabitsPage();
 	    sPage = new ShopPage();
+	    cPage = new ChangePetPage();
 	    
 	    dlyPage = new DailyHabitsPage();
 	    wlyPage = new WeeklyHabitsPage();

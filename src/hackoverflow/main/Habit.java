@@ -37,7 +37,6 @@ public class Habit {
 		Button cmpBtn = hPanel.getCmpBtn();
 		cmpBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.println("Pressed");
 	    		updateHabitExp(2);
 	    		hPanel.update(curExp, levelExp, level);
 	        }
@@ -175,11 +174,11 @@ public class Habit {
 			ProfilePage.count += 50;
 			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
 		}
-		System.out.println(Main.exp);
+		
 		if(Main.exp >= 10) {
 			Main.exp = 0;
 			Main.lvl += 1;
-			System.out.println("Level Up");
+			
 		}
 	}
 }

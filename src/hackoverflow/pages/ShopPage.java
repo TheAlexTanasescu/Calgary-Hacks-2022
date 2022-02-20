@@ -94,6 +94,31 @@ public class ShopPage extends PagePanel{
 	    			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
 	            }
 	        });
+		 
+		 btn2.addActionListener(new ActionListener() {
+
+	            public void actionPerformed(ActionEvent e) {
+	            	ProfilePage.count -= 500;
+	    			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
+	            }
+	        });
+		 
+		 btn3.addActionListener(new ActionListener() {
+
+	            public void actionPerformed(ActionEvent e) {
+	            	ProfilePage.count -= 500;
+	    			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
+	            }
+	        });
+		 
+		 btn4.addActionListener(new ActionListener() {
+
+	            public void actionPerformed(ActionEvent e) {
+	            	ProfilePage.count -= 500;
+	    			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
+	            }
+	        });
+		 
 		//this.add(filler3, BorderLayout.EAST);
 		
 		panel.add(btn1); 

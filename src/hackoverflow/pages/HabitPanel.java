@@ -81,8 +81,7 @@ public class HabitPanel extends JPanel {
 		this.add(descTxtField, c);
 			
 		//Progress Bar
-		System.out.println(MaxEXP);
-		System.out.println(EXP);
+	
 		prgBar = new JProgressBar();
 		prgBar.setMaximum(MaxEXP);
 		prgBar.setValue(EXP);
@@ -114,7 +113,6 @@ public class HabitPanel extends JPanel {
 		prgBar.setValue(progress);
 		prgBar.setMaximum(max);
 		String lvl = String.valueOf(level);
-		System.out.println(lvl);
 		lvlLbl.setText("Lvl: " + lvl);
 		TopPanel.updateLvlLbl();
 	}
