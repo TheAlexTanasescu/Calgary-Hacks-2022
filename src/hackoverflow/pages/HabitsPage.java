@@ -24,25 +24,13 @@ public class HabitsPage extends PagePanel {
 	}
 	
 	public void initButtons(PageFrame frame) {
-		//this.setLayout(new GridBagLayout());
 		this.setLayout(null);
 		this.setVisible(true);
 		
 		profileBtn = new Button("Profile");
 		
-		//gb.fill = GridBagConstraints.HORIZONTAL;
 		profileBtn.setBounds(40, 30, 100, 40);
 		this.add(profileBtn);
-//		gb.ipady = 0;
-//		gb.weightx = 0.5; 
-//		gb.weighty = 0.0; 
-//		gb.gridwidth = 1; 
-//		gb.anchor = GridBagConstraints.CENTER; 
-//		gb.insets = new Insets(0,0,0,0); 
-//		gb.gridx = 0; 
-//		gb.gridy = 0;
-//		this.add(b, gb);
-		//b.setBounds(0, 0, 0, 0);
 		HabitsPage page = this;
 		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {

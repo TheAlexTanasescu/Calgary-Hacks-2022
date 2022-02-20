@@ -31,27 +31,26 @@ public class Main {
 	 	
     }
     
-    
+    /**
+     * Switch from the currentPage to the Profile page
+     * @param frame the frame which contains the current page
+     * @param currentPage the current page
+     */
     public static void switchToProfilePage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(pPage);
     	frame.validate();
     }
     
+    /**
+     * Switch from the currentPage to the Habits page
+     * @param frame the frame which contains the current page
+     * @param currentPage the current page
+     */
     public static void switchToHabitsPage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(hPage);
     	frame.validate();
     }
-    /**
-     * Switches the current panel to the new panel
-     * @param frame The frame which contains the panels
-     * @param currentPanel the current panel displayed
-     * @param newPanel the new panel to be displayed
-     */
-    public static void switchPanels(PageFrame frame, PagePanel currentPanel, PagePanel newPanel) {
-    	frame.remove(currentPanel);
-    	frame.add(newPanel);
-    	frame.validate();
-    }
+
 }
