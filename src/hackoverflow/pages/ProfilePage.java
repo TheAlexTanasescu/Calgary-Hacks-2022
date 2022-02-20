@@ -16,6 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import hackoverflow.main.Main;
+import hackoverflow.popups.StartPopup;
 
 
 public class ProfilePage extends PagePanel {
@@ -33,7 +34,8 @@ public class ProfilePage extends PagePanel {
 		imageLabel = getImageIcon(imageString);
 		petName = getName();
 
-        JLabel label = new JLabel("Profile", SwingConstants.CENTER);
+		String nameThing = StartPopup.playerName + "'s Profile";
+        JLabel label = new JLabel(nameThing, SwingConstants.CENTER);
         label.setFont(new Font("Verdana", Font.PLAIN, 36));
         
         JButton backBtn = new JButton("Back");
@@ -41,7 +43,8 @@ public class ProfilePage extends PagePanel {
         
         JButton changeBtn = new JButton("Change Pet");
       
-        petNameLbl = new JLabel(petName,SwingConstants.CENTER);
+        String petNameThing = "Current Pet: " + petName;
+        petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
         
         setLayout(new BorderLayout(0, 20));
         

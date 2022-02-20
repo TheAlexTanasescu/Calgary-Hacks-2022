@@ -19,6 +19,7 @@ public class StartPopup extends PagePanel {
 	private static final long serialVersionUID = 6574452451327197543L;
 	//private static JOptionPane startPopup;
 	
+	public static String playerName;
 	public StartPopup()
 	{
 		JLabel intro = new JLabel("Let's begin with your name. What is it?");
@@ -68,6 +69,7 @@ public class StartPopup extends PagePanel {
 		    
 		};
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+		playerName = name.getText();
 	}
 
 }
