@@ -22,7 +22,7 @@ public class ProfilePage extends PagePanel {
 
 	private static final long serialVersionUID = 7496382167255611538L;
 
-	public ProfilePage(PageFrame frame) {            
+	public ProfilePage() {            
         ImageIcon petIcon = new ImageIcon("res/pet_moomask3.png");
         Image img = petIcon.getImage();
         Image newimg = img.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH);

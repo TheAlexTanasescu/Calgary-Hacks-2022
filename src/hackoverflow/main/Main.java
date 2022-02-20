@@ -35,8 +35,8 @@ public class Main {
 	    
 	    //Panel
 	    mPage = new MainPage(startFrame, "Title", "Description", null);
-	    pPage = new ProfilePage(startFrame);
-	    sPage = new ShopPage(startFrame);
+	    pPage = new ProfilePage();
+	    sPage = new ShopPage();
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
 	 	
