@@ -1,10 +1,14 @@
 package hackoverflow.main;
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import hackoverflow.pages.HabitPanel;
 
 import hackoverflow.pages.HabitPanel;
 
 public class Habit {
-	//private HabitPanel hPanel;
+
 	private int level;
 	int curExp;
 	int levelExp;
@@ -19,14 +23,27 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	public Habit(String inTitle, String inDesc, Frequency inFreq) {
+	public Habit(String inTitle, String inDesc) {
 		setHabitTitle(inTitle);
-		setHabitFrequency(inFreq);
+		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
-		setHabitLevel(0);
-		this.levelExp = 0;
+		setHabitLevel(1);
+		setHabitLevelExp(level);
 		this.curExp = 0;
-		hPanel = new HabitPanel(title, level, desc, 0);
+		
+		int temp1 = getHabitLevelExp();
+		hPanel = new HabitPanel(title, 1, desc, 0, temp1);
+		Button cmpBtn = hPanel.getCmpBtn();
+		cmpBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.println("Pressed");
+	    		updateHabitExp(2);
+	    		hPanel.update(curExp, levelExp);
+	        }
+	    });
+
+		
+
 	}
 	
 	/**
@@ -82,7 +99,7 @@ public class Habit {
 	 * @param hp
 	 * @return
 	 */
-	HabitPanel getHabitPanel(HabitPanel hp) {
+	public HabitPanel getHabitPanel() {
 		return hPanel;
 	}
 	
@@ -123,7 +140,7 @@ public class Habit {
 	 * @param inLevel
 	 */
 	void setHabitLevelExp (int inLevel) {
-		this.levelExp = (int) Math.pow(inLevel, 1.5);
+		this.levelExp = inLevel * 5;
 	}
 	
 	/**
@@ -146,13 +163,13 @@ public class Habit {
 	 * Updates the Exp and level
 	 * @param inExp
 	 */
-	void updateHabitExp(int inExp, HabitPanel hp) {
+	void updateHabitExp(int inExp) {
+		curExp += inExp;
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
-			hp = new HabitPanel(title, level, desc, curExp);
 		}
 	}
 }

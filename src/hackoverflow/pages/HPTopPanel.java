@@ -18,11 +18,11 @@ import hackoverflow.popups.ImagePane;
 public class HPTopPanel extends JPanel {
 	private static final long serialVersionUID = 5758091766734972758L;
 	
-	private String imgPath = "res/pet_moomask1.png";
+	private String imgPath = "res/pet_justin1.png";
 	
-	public HPTopPanel(PagePanel currentPanel) {
+	public HPTopPanel(PagePanel currentPanel, JPanel inPanel) {
 		super();
-		initLayout(currentPanel);
+		initLayout(currentPanel, inPanel);
 		
 	}
 	
@@ -30,7 +30,7 @@ public class HPTopPanel extends JPanel {
 	 * 
 	 * @param currentPanel the current main Panel of the frame
 	 */
-	private void initLayout(PagePanel currentPanel) {
+	private void initLayout(PagePanel currentPanel, JPanel inPanel) {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
@@ -82,10 +82,14 @@ public class HPTopPanel extends JPanel {
 		c.gridheight = 1;
 		c.anchor = GridBagConstraints.FIRST_LINE_END;
 		c.insets = new Insets(10, 40, 10, 5);
+		JPanel page = this;
 		addBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		new ImagePane(null, null, null, imgPath);
-	        }  
+	    		new ImagePane(null, null, null, imgPath, inPanel);
+	    		
+	    		page.validate();
+	    		page.repaint();
+	        }
 	    });
 		this.add(addBtn, c);
 	}
