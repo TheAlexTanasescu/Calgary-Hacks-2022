@@ -23,10 +23,10 @@ public class Habit {
 		setHabitTitle(inTitle);
 		setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
-		setHabitLevel(0);
+		setHabitLevel(1);
 		this.levelExp = 0;
 		this.curExp = 0;
-		hPanel = new HabitPanel(title, level, desc, 0);
+		hPanel = new HabitPanel(title, 1, desc, 0);
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class Habit {
 	 * @param hp
 	 * @return
 	 */
-	HabitPanel getHabitPanel(HabitPanel hp) {
+	public HabitPanel getHabitPanel() {
 		return hPanel;
 	}
 	
