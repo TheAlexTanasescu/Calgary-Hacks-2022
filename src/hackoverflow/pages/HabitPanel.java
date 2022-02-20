@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -18,12 +20,19 @@ import hackoverflow.main.Main;
 public class HabitPanel extends JPanel {
 	private static final long serialVersionUID = 4842251332912377960L;
 
+	private Habit habit;
+	private JProgressBar prgBar;
+	private JLabel lvlLbl;
+	private Button completeBtn;
+	
 	public HabitPanel(String title, int level, String description, int EXP, int MaxEXP) {
+		
 		super();
+		
 		this.setSize(Main.width - 40, 150);
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
-		
+
 		GridBagConstraints c = new GridBagConstraints();
 		
 		// Title
@@ -50,7 +59,7 @@ public class HabitPanel extends JPanel {
 		String lvl = String.valueOf(level);
 		
 		// Level
-		JLabel lvlLbl = new JLabel(lvl);
+		lvlLbl = new JLabel(lvl);
 		c.weightx = 0.15;
 		c.gridwidth = 1;
 		c.insets = new Insets(0,2,2,2);
@@ -73,7 +82,8 @@ public class HabitPanel extends JPanel {
 		c.insets = new Insets(5, 10, 5, 10);
 		this.add(descTxtField, c);
 			
-		JProgressBar prgBar = new JProgressBar();
+		//Progress Bar
+		prgBar = new JProgressBar();
 		prgBar.setMaximum(MaxEXP);
 		prgBar.setValue(EXP);
 		prgBar.setStringPainted(true);
@@ -90,13 +100,21 @@ public class HabitPanel extends JPanel {
 		this.add(prgBar, c);
 		
 		// Complete habit button
-		Button completeBtn = new Button("Complete");
+		completeBtn = new Button("Complete");
 		c.weightx = 0.5;
 		c.gridx = 0;
 		c.gridy = 3;
 		c.gridwidth = 3;
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(20,50,10,50);
-		this.add(completeBtn, c);
+		this.add(completeBtn, c);	
+	}
+	
+	public void update(int progress) {
+		prgBar.setValue(progress);
+	}
+	
+	public Button getCmpBtn() {
+		return completeBtn;
 	}
 }
