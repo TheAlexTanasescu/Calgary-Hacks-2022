@@ -1,13 +1,13 @@
 package hackoverflow.pages;
 
-import java.awt.BorderLayout;
+
+import javax.swing.JComboBox;
+
 import java.awt.Button;
 import java.awt.Color;
-
-import java.awt.*;  
-import javax.swing.JFrame;
-
+import java.awt.GridBagConstraints;
 import hackoverflow.main.Main;
+import hackoverflow.popups.ImagePane;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,26 +21,34 @@ public class HabitsPage extends PagePanel {
 
 	public HabitsPage(PageFrame frame) {
 		this.setName("Habits Page");
-		this.setBackground(Color.LIGHT_GRAY);
 		initButtons(frame);
 	}
 	
-
 	public void initButtons(PageFrame frame) {
-		profileBtn = new Button("P");
+		this.setLayout(null);
+		this.setVisible(true);
+		
+		profileBtn = new Button("Profile");
+		profileBtn.setBounds(40, 30, 100, 40);
 		this.add(profileBtn);
-		HabitsPage p = this;
-		profileBtn.addActionListener(new ActionListener() {  
+		HabitsPage page = this;
+
+		profileBtn.setBounds(40, 30, 100, 40);
+		this.add(profileBtn);
+		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		Main.switchPanels(frame, p, new PageProfile(frame));
+	    		Main.switchToProfilePage(frame, page);
 	        }  
 	    });
 		
-		addHabitBtn = new Button("Add Habit");
-		this.add(addHabitBtn);
-		addHabitBtn.addActionListener(new ActionListener() {
+		
+		
+		Button addHabit = new Button("Add Habit");
+		addHabit.setBounds(320, 30, 100, 40);
+		this.add(addHabit);
+		addHabit.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.print("Adding Habit");
+	    		ImagePane.main("Enter Name of Habit you want to add", "Add Habit", null, null, null);
 	        }
 	    });
 	}

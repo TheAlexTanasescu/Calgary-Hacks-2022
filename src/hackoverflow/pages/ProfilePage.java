@@ -13,20 +13,28 @@ import javax.swing.JFrame;
 
 import hackoverflow.main.Main;
 
-public class PageProfile extends PagePanel {
 
-	public PageProfile(JFrame frame)
+public class ProfilePage extends PagePanel {
+
+	public ProfilePage(PageFrame frame)
 	 
 	    {			super();
 
 	        Button btn=new Button("Helloo World");
-	        add(btn); 		//adding a new Button.
+	        this.add(btn); 		//adding a new Button.
+	        ProfilePage pg = this;
+	        btn.addActionListener(new ActionListener() {
+		    	public void actionPerformed(ActionEvent e) {
+		    		Main.switchToHabitsPage(frame, pg);
+		        }
+		    });
 	        setSize(300,300);        //setting size.
 	        setName("StudyTonight");  //setting title.
 	        setLayout(new GridBagLayout());	 //set default layout for frame.
 	        setVisible(true);           //set frame visibilty true.
+
 	        this.add(btn);
-			PageProfile p = this;
+			ProfilePage p = this;
 			btn.addActionListener(new ActionListener() {  
 		    	public void actionPerformed(ActionEvent e) {
 		    		frame.remove(p);
@@ -36,5 +44,8 @@ public class PageProfile extends PagePanel {
 		    }); 
 	
 
+	     	 
+	    }
+
 }
-	}
+	
