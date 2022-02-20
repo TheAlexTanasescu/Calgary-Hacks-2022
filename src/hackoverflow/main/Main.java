@@ -106,7 +106,7 @@ public class Main {
      * Switch from the currentPage to the Daily page
      * @param currentPage the current page
      */
-    public static void switchToDailyPage(PagePanel currentPage) {
+    public static void switchToDailyHabitsPage(PagePanel currentPage) {
     	startFrame.remove(currentPage);
     	startFrame.add(dlyPage);
     	dlyPage.repaint();
