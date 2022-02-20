@@ -32,6 +32,8 @@ public class ProfilePage extends PagePanel {
 		public static JLabel petNameLbl;
 		public static int count = 0;
 		public static JLabel tokenLabel;
+		public static String playerName;
+		private static JLabel label;
 		
 	public ProfilePage() {            
         
@@ -39,7 +41,7 @@ public class ProfilePage extends PagePanel {
 		petName = getName();
 
 		String nameThing = StartPopup.playerName + "'s Profile";
-        JLabel label = new JLabel(nameThing, SwingConstants.CENTER);
+        label = new JLabel(nameThing, SwingConstants.CENTER);
         label.setFont(new Font("Verdana", Font.PLAIN, 36));
         
         JButton backBtn = new JButton("Back");
@@ -50,7 +52,7 @@ public class ProfilePage extends PagePanel {
         String petNameThing = "Current Pet: " + petName;
         petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
         tokenLabel = new JLabel("Tokens: " + Integer.toString(count), SwingConstants.CENTER);
-        tokenLabel.setBorder(new EmptyBorder(0,0,80,100));
+        tokenLabel.setBorder(new EmptyBorder(0,0,80,0));
         setLayout(new BorderLayout(0, 20));
         
         
@@ -134,11 +136,19 @@ public class ProfilePage extends PagePanel {
 	
 	@Override
 	  protected void paintComponent(Graphics g) {
-		ImageIcon backImg = new ImageIcon("");
+		ImageIcon backImg = new ImageIcon("res/bghd.png");
 		Image img = backImg.getImage();
 		//Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
 	    super.paintComponent(g);
 	    g.drawImage(img, 0, 0, null);
+	}
+	
+	public static void changePlayerName(String name) {
+		
+		label.setText(name + "'s Profile");
+		
+		
+		
 	}
 
 

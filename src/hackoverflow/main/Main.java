@@ -54,6 +54,7 @@ public class Main {
 	    mPage = new MainPage(startFrame);
 	    hPage = new HabitsPage();
 	    sPage = new ShopPage();
+	    cPage = new ChangePetPage();
 	    
 	    dlyPage = new DailyHabitsPage();
 	    wlyPage = new WeeklyHabitsPage();

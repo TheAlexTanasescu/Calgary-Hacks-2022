@@ -72,8 +72,8 @@ public class StartPopup extends PagePanel {
 		    
 		};
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.PLAIN_MESSAGE, null, null, null);
-		playerName = name.getText();
 		
+		ProfilePage.changePlayerName(name.getText());
 		if (checkBox1.isSelected())
 		{
 			ProfilePage.setImageIcon("res/pet_justin0.png");

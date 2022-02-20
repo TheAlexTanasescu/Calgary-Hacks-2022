@@ -69,7 +69,6 @@ public class ImagePane {
 		//int option = JOptionPane.showConfirmDialog(null, messageArr, "Add New Habit", JOptionPane.OK_CANCEL_OPTION);
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
-			System.out.println("WOW");
 			Habit habit = new Habit(habitTitle.getText(), description.getText());
 			inPanel.add(habit.getHabitPanel());
 			inPanel.revalidate();
