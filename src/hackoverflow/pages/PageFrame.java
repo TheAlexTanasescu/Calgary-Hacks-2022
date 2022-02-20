@@ -8,11 +8,7 @@ import javax.swing.JFrame;
 
 
 public class PageFrame extends javax.swing.JFrame {
-
 	private static final long serialVersionUID = 1L;
-
-   
-    private PagePanel panel;
     
     public PageFrame(int width, int height, String title) {    
         // Initialize
