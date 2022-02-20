@@ -20,22 +20,19 @@ public class HabitsPage extends PagePanel {
 
 	public HabitsPage(PageFrame frame) {
 		this.setName("Habits Page");
-		this.setBackground(Color.LIGHT_GRAY);
 		initButtons(frame);
 	}
 	
-	public void initButtons(JFrame frame) {
-		int test = 0;
-		GridBagConstraints gb = new GridBagConstraints();
+	public void initButtons(PageFrame frame) {
 		//this.setLayout(new GridBagLayout());
 		this.setLayout(null);
 		this.setVisible(true);
 		
-		Button b = new Button("Profile");
+		profileBtn = new Button("Profile");
 		
 		//gb.fill = GridBagConstraints.HORIZONTAL;
-		b.setBounds(40, 30, 100, 40);
-		this.add(b);
+		profileBtn.setBounds(40, 30, 100, 40);
+		this.add(profileBtn);
 //		gb.ipady = 0;
 //		gb.weightx = 0.5; 
 //		gb.weighty = 0.0; 
@@ -46,11 +43,10 @@ public class HabitsPage extends PagePanel {
 //		gb.gridy = 0;
 //		this.add(b, gb);
 		//b.setBounds(0, 0, 0, 0);
-		b.addActionListener(new ActionListener() {
+		HabitsPage page = this;
+		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		//frame.
-	    		//frame.add(new PagePanel(frame));
-	    		System.out.print("Welcome to Javatpoint.");
+	    		Main.switchToProfilePage(frame, page);
 	        }  
 	    });
 		
@@ -59,11 +55,6 @@ public class HabitsPage extends PagePanel {
 		Button addHabit = new Button("Add Habit");
 		addHabit.setBounds(320, 30, 100, 40);
 		this.add(addHabit);
-		//gb.fill = GridBagConstraints.HORIZONTAL;
-//		gb.weightx = 0.5;
-//		gb.gridx = 1;
-//		gb.gridy = -1;
-//		this.add(addHabit, gb);
 		addHabit.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.print("Adding Habit");
