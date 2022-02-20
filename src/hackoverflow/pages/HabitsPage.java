@@ -9,25 +9,50 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HabitsPage extends javax.swing.JPanel {
-    private static final long serialVersionUID = 25974988494620193L;
-    
-    
-    public HabitsPage(JFrame frame) {
-        //setBackground(Color.LIGHT_GRAY);
-        setLayout(new GridBagLayout());
-        
-        GridBagConstraints gb = new GridBagConstraints();
-        JButton b = new JButton("Start");  
-        b.addActionListener(new ActionListener() {  
-            public void actionPerformed(ActionEvent e) {  
-                frame.dispose();
-            }  
-        });
-       // add(b, new GridBagConstraints());
-        add(b, gb);
-        
-        //initButtons();
-    }
-    
+public class HabitsPage extends PagePanel {
+	private static final long serialVersionUID = 25974988494620193L;
+
+	public HabitsPage(JFrame frame) {
+		super(frame);
+		this.setBackground(Color.LIGHT_GRAY);
+		initButtons(frame);
+	}
+
+	public void initButtons(JFrame frame) {
+		GridBagConstraints gb = new GridBagConstraints();
+		this.setLayout(new GridBagLayout());
+		this.setVisible(true);
+		
+		Button b = new Button("P");
+		this.add(b);
+		b.addActionListener(new ActionListener() {  
+	    	public void actionPerformed(ActionEvent e) {
+	    		frame.dispose();
+	    		System.out.print("Welcome to Javatpoint.");
+	        }  
+	    });
+		
+		Button addHabit = new Button("Add Habit");
+		this.add(addHabit);
+		addHabit.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.print("Adding Habit");
+	        }
+	    });
+	}
+	
+	public void addHabit() {
+		GridBagConstraints gb = new GridBagConstraints();
+		this.setLayout(new GridBagLayout());
+		this.setVisible(true);
+		
+		
+		Button addHabit = new Button("Add Habit");
+		this.add(addHabit);
+		addHabit.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.print("Adding Habit");
+	        }  
+	    });
+	}
 }
