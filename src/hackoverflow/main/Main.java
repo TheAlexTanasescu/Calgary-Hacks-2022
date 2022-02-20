@@ -21,13 +21,19 @@ public class Main {
 	    PageFrame startFrame = new PageFrame(width, height, title);
 
 	    //Panel
-	 	PagePanel startPanel = new PagePanel();
+	 	//PagePanel startPanel = new PagePanel();
 	 	startFrame.add(new HabitsPage(startFrame));
 	 	
 	 	startFrame.validate();
 	 	
     }
     
+    /**
+     * Switches the current panel to the new panel
+     * @param frame The frame which contains the panels
+     * @param currentPanel the current panel displayed
+     * @param newPanel the new panel to be displayed
+     */
     public static void switchPanels(PageFrame frame, PagePanel currentPanel, PagePanel newPanel) {
     	frame.remove(currentPanel);
     	frame.add(newPanel);
