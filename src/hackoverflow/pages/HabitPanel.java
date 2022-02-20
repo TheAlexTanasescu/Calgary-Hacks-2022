@@ -2,6 +2,7 @@ package hackoverflow.pages;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -12,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import hackoverflow.main.Habit;
@@ -30,6 +32,7 @@ public class HabitPanel extends JPanel {
 		super();
 		
 		this.setSize(Main.width - 40, 150);
+		this.setMaximumSize(new Dimension(Main.width, 150));
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
 
@@ -59,7 +62,7 @@ public class HabitPanel extends JPanel {
 		String lvl = String.valueOf(level);
 		
 		// Level
-		lvlLbl = new JLabel(lvl);
+		lvlLbl = new JLabel("Lvl: " + lvl);
 		c.weightx = 0.15;
 		c.gridwidth = 1;
 		c.insets = new Insets(0,2,2,2);
@@ -69,9 +72,9 @@ public class HabitPanel extends JPanel {
 		this.add(lvlLbl, c);
 		
 		// Description
-		JTextField descTxtField = new JTextField(description);
+		JTextArea descTxtField = new JTextArea(description);
+		descTxtField.setLineWrap(true);
 		descTxtField.setEditable(false);
-		descTxtField.setSize(20, 40);
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weighty = 0.3;
 		c.gridx = 0;
@@ -117,7 +120,8 @@ public class HabitPanel extends JPanel {
 		prgBar.setMaximum(max);
 		String lvl = String.valueOf(level);
 		System.out.println(lvl);
-		lvlLbl.setText(lvl);
+		lvlLbl.setText("Lvl: " + lvl);
+		TopPanel.updateLvlLbl();
 	}
 	
 	public Button getCmpBtn() {

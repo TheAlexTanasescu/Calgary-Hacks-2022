@@ -15,7 +15,6 @@ import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.ShopPage;
 import hackoverflow.pages.WeeklyHabitsPage;
 import hackoverflow.pages.YearlyHabitsPage;
-import hackoverflow.popups.InstructionPopup;
 import hackoverflow.popups.StartPopup;
 
 
@@ -31,29 +30,27 @@ public class Main {
 
 	private static ChangePetPage cPage;
 
-	
 	private static DailyHabitsPage dlyPage;
 	private static WeeklyHabitsPage wlyPage;
 	private static MonthlyHabitsPage mlyPage;
 	private static YearlyHabitsPage ylyPage;
 
-
 	private static PageFrame startFrame;
 	
+	public static int lvl;
+	public static int exp;
+	public static final int maxExp = 10;
+	
     public static void main(String[] args) {
+    	lvl = 0;
+    	exp = 0;
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
-	    
-	   
 
 	    //Panel
-    	InstructionPopup popup = new InstructionPopup();
-    	StartPopup startPopup = new StartPopup();
+    	new StartPopup();
 	    
-
-	    //Panel
-	
-//Pages
+    	//Pages
 	    mPage = new MainPage(startFrame);
 
 	    pPage = new ProfilePage();

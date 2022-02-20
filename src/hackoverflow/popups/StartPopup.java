@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import hackoverflow.main.User;
 import hackoverflow.pages.PagePanel;
 
 public class StartPopup extends PagePanel {
