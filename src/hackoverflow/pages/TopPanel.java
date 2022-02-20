@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import hackoverflow.main.Main;
+import hackoverflow.popups.InstructionPopup;
 
 /**
  * Top panel for the main page
@@ -59,19 +60,37 @@ public class TopPanel extends JPanel {
 		// Profile Button
 		Button profileBtn = new Button("Profile");
 		c.fill = GridBagConstraints.BOTH;
-		c.weightx = 0.7;
+		c.weightx = 0.5;
 		c.weighty = 0.2;
 		c.gridx = 0;
 		c.gridy = 1;
 		c.gridwidth = 1;
 		c.gridheight = 1;
 		c.anchor = GridBagConstraints.LINE_START;
-		c.insets = new Insets(0, 40, 5, 40);
+		c.insets = new Insets(0, 10, 5, 10);
 		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		Main.switchToProfilePage(currentPanel);
 	        }  
 	    });
 		this.add(profileBtn, c);
+		
+		// Profile Button
+		Button helpBtn = new Button("Help");
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 0.5;
+		c.weighty = 0.2;
+		c.gridx = 1;
+		c.gridy = 1;
+		c.gridwidth = 1;
+		c.gridheight = 1;
+		c.anchor = GridBagConstraints.LINE_END;
+		c.insets = new Insets(0, 10, 5, 10);
+		helpBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		new InstructionPopup();
+	        }  
+	    });
+		this.add(helpBtn, c);
 	}
 }

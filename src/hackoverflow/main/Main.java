@@ -11,7 +11,6 @@ import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.ShopPage;
 import hackoverflow.pages.WeeklyHabitsPage;
 import hackoverflow.pages.YearlyHabitsPage;
-import hackoverflow.popups.InstructionPopup;
 import hackoverflow.popups.StartPopup;
 
 
@@ -35,12 +34,9 @@ public class Main {
     public static void main(String[] args) {
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
-	    
-	   
 
 	    //Panel
-    	InstructionPopup popup = new InstructionPopup();
-    	StartPopup startPopup = new StartPopup();
+    	new StartPopup();
 	    
 	    //Pages
 	    mPage = new MainPage(startFrame);
