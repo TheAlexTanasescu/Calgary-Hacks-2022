@@ -1,48 +1,83 @@
 package hackoverflow.pages;
 
-import java.awt.*;  
-import javax.swing.JFrame;
 
+import javax.swing.JComboBox;
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import hackoverflow.main.Main;
 import hackoverflow.popups.ImagePane;
-
-import javax.swing.JButton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HabitsPage extends javax.swing.JPanel {
-    private static final long serialVersionUID = 25974988494620193L;
-    private PageFrame habitsFrame;
-    
-    public HabitsPage(JFrame frame) {
-        //setBackground(Color.LIGHT_GRAY);
-        setLayout(new GridBagLayout());
-        
-        
-        GridBagConstraints gb = new GridBagConstraints();
-        JButton b = new JButton("Start");  
-        b.addActionListener(new ActionListener() {  
-            public void actionPerformed(ActionEvent e) {  
-                /*
-            	frame.dispose();
-                habitsFrame = new PageFrame(120, 720, "Habits");
-                habitsFrame.setVisible(true);
-                Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        		habitsFrame.setSize(1280, 720);
-        		habitsFrame.setLocation((int)(screenSize.getWidth()/2 - habitsFrame.getSize().getWidth()/2), (int)(screenSize.getHeight()/2 - habitsFrame.getSize().getHeight()/2));
-        		habitsFrame.setResizable(false);
-        		habitsFrame.setTitle("HackOverflow");
-        		habitsFrame.setVisible(true);
-                System.out.print("Hello");
-                */
-            	ImagePane.main("Enter Name of Habit you want to add", "Add Habit", null, null, null);
-                
-            }  
-        });
-       // add(b, new GridBagConstraints());
-        add(b, gb);
-        
-        //initButtons();
-    }
-    
+public class HabitsPage extends PagePanel {
+	private static final long serialVersionUID = 25974988494620193L;
+	private Button addHabitBtn;
+	private Button profileBtn;
+
+	public HabitsPage(PageFrame frame) {
+		this.setName("Habits Page");
+		this.setBackground(Color.LIGHT_GRAY);
+		initButtons(frame);
+	}
+	
+	public void initButtons(PageFrame frame) {
+		int test = 0;
+		GridBagConstraints gb = new GridBagConstraints();
+		//this.setLayout(new GridBagLayout());
+		this.setLayout(null);
+		this.setVisible(true);
+		
+		profileBtn = new Button("Profile");
+		
+		//gb.fill = GridBagConstraints.HORIZONTAL;
+		profileBtn.setBounds(40, 30, 100, 40);
+		this.add(profileBtn);
+//		gb.ipady = 0;
+//		gb.weightx = 0.5; 
+//		gb.weighty = 0.0; 
+//		gb.gridwidth = 1; 
+//		gb.anchor = GridBagConstraints.CENTER; 
+//		gb.insets = new Insets(0,0,0,0); 
+//		gb.gridx = 0; 
+//		gb.gridy = 0;
+//		this.add(b, gb);
+		//b.setBounds(0, 0, 0, 0);
+		profileBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//frame.
+	    		//frame.add(new PagePanel(frame));
+	    		System.out.print("Welcome to Javatpoint.");
+	        }  
+	    });
+		
+		
+		
+		Button addHabit = new Button("Add Habit");
+		addHabit.setBounds(320, 30, 100, 40);
+		this.add(addHabit);
+		//gb.fill = GridBagConstraints.HORIZONTAL;
+//		gb.weightx = 0.5;
+//		gb.gridx = 1;
+//		gb.gridy = -1;
+//		this.add(addHabit, gb);
+		addHabit.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		ImagePane.main("Enter Name of Habit you want to add", "Add Habit", null, null, null);
+	        }
+	    });
+	}
+	
+	public void addHabit() {
+		addHabitBtn = new Button("Add Habit");
+		this.add(addHabitBtn);
+		addHabitBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.print("Adding Habit");
+	        }  
+	    });
+	}
 }
+
