@@ -51,7 +51,7 @@ public class HabitsPage extends PagePanel {
 		setHabitLevel(0);
 		this.levelExp = 0;
 		this.curExp = 0;
-		initButtons(frame);
+		initButtons();
 	}
 	
 	/**
@@ -173,12 +173,7 @@ public class HabitsPage extends PagePanel {
 
 	
 	
-	public void initButtons(JFrame frame) {
-		int test = 0;
-		GridBagConstraints gb = new GridBagConstraints();
-		//this.setLayout(new GridBagLayout());
-		this.setLayout(null);
-		this.setVisible(true);
+
 	private Button dailyBtn;
 	private Button weeklyBtn;
 	private Button monthlyBtn;
@@ -256,30 +251,7 @@ public class HabitsPage extends PagePanel {
 	
 	private void initButtons() {
 		//this.setLayout(null);
-		this.setVisible(true);
-		//gb.fill = GridBagConstraints.HORIZONTAL;
-		b.setBounds(40, 30, 100, 40);
-		this.add(b);
-		b.addActionListener(new ActionListener() {
-		profileBtn = new Button("Profile");
-		HabitsPage page = this;
-		profileBtn.setBounds(40, 30, 100, 40);
-		//this.add(profileBtn);
-		profileBtn.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		Main.switchToProfilePage(frame, page);
-	        }  
-	    });
-		
-		Button addHabit = new Button("Add Habit");
-		addHabit.setBounds(320, 30, 100, 40);
-		this.add(addHabit);
-		//this.add(addHabit);
-		addHabit.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		ImagePane.main("", "", null, null, "res/pet_moomask3.png");
-	        }
-	    });
+	
 		
 		createDailyBtn();
 		createWeeklyBtn();
