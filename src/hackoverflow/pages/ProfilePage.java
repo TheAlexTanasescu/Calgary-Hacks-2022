@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
@@ -28,6 +29,8 @@ public class ProfilePage extends PagePanel {
 		String petName;
 		private static JLabel imageLabel;
 		public static JLabel petNameLbl;
+		public static int count = 0;
+		public static JLabel tokenLabel;
 		
 	public ProfilePage() {            
         
@@ -45,12 +48,14 @@ public class ProfilePage extends PagePanel {
       
         String petNameThing = "Current Pet: " + petName;
         petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
-        
+        tokenLabel = new JLabel("Tokens: " + Integer.toString(count), SwingConstants.CENTER);
+        tokenLabel.setBorder(new EmptyBorder(0,0,50,0));
         setLayout(new BorderLayout(0, 20));
         
         
         JPanel petPanel = new JPanel();
         petPanel.setBorder(new EmptyBorder(40, 10, 10, 10));
+        petPanel.add(tokenLabel);
         petPanel.add(petNameLbl);
         petPanel.add(imageLabel);
         

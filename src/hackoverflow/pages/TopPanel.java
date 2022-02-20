@@ -1,6 +1,7 @@
 package hackoverflow.pages;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -38,6 +39,7 @@ public class TopPanel extends JPanel {
 	 * @param currentPanel the current main Panel of the frame
 	 */
 	private void initLayout(PagePanel currentPanel) {
+		this.setBackground(Color.WHITE);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		

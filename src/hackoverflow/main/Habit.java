@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import hackoverflow.pages.HabitPanel;
-
+import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.HabitPanel;
 
 public class Habit {
@@ -172,6 +172,8 @@ public class Habit {
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
+			ProfilePage.count += 50;
+			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
 		}
 		System.out.println(Main.exp);
 		if(Main.exp >= 10) {
