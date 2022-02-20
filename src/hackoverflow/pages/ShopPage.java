@@ -64,10 +64,10 @@ public class ShopPage extends PagePanel{
 		newIcon = new ImageIcon(newimg);
 		btn4.setIcon(newIcon);
 		
-		JLabel price1 = new JLabel("5000 Tokens", SwingConstants.CENTER);
-		JLabel price2 = new JLabel("5000 Tokens", SwingConstants.CENTER);
-		JLabel price3 = new JLabel("5000 Tokens", SwingConstants.CENTER);
-		JLabel price4 = new JLabel("5000 Tokens", SwingConstants.CENTER);
+		JLabel price1 = new JLabel("500 Tokens", SwingConstants.CENTER);
+		JLabel price2 = new JLabel("500 Tokens", SwingConstants.CENTER);
+		JLabel price3 = new JLabel("500 Tokens", SwingConstants.CENTER);
+		JLabel price4 = new JLabel("500 Tokens", SwingConstants.CENTER);
 
 		
 		JButton backBtn = new JButton("Back");
@@ -84,6 +84,14 @@ public class ShopPage extends PagePanel{
 
 	            public void actionPerformed(ActionEvent e) {
 	                Main.switchToProfilePage(pg);
+	            }
+	        });
+		 
+		 btn1.addActionListener(new ActionListener() {
+
+	            public void actionPerformed(ActionEvent e) {
+	            	ProfilePage.count -= 500;
+	    			ProfilePage.tokenLabel.setText("Tokens: "+ Integer.toString(ProfilePage.count));
 	            }
 	        });
 		//this.add(filler3, BorderLayout.EAST);
