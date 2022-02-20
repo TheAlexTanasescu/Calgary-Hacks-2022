@@ -14,12 +14,8 @@ import javax.swing.ScrollPaneConstants;
 
 public class HabitsPage extends PagePanel {
 	private static final long serialVersionUID = -7676600580151846300L;
-	int uLvl;
-	int uExp;
 	
-	public HabitsPage(int uL, int uE) {
-		uLvl = uL;
-		uExp = uE;
+	public HabitsPage() {
 		init();
 	}
 	
@@ -37,7 +33,7 @@ public class HabitsPage extends PagePanel {
 		JPanel inPanel = new JPanel();
 		
 		// Top pane
-		HPTopPanel tPanel = new HPTopPanel(this, inPanel, uLvl, uExp);
+		HPTopPanel tPanel = new HPTopPanel(this, inPanel);
 
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 1;

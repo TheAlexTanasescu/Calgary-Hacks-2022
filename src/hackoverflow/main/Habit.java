@@ -12,8 +12,6 @@ public class Habit {
 	private int level;
 	int curExp;
 	int levelExp;
-	int userExp;
-	int userLvl;
 	String title;
 	String desc;
 	Frequency freq;
@@ -25,16 +23,14 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	public Habit(String inTitle, String inDesc, int uLvl, int uExp) {
-		userLvl = uLvl;
-		userExp = uExp;
+	public Habit(String inTitle, String inDesc) {
 		setHabitTitle(inTitle);
 		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(1);
 		setHabitLevelExp(level);
 		this.curExp = 0;
-		
+		Main.exp += 1;
 		int temp1 = getHabitLevelExp();
 		int temp2 = getHabitLevel();
 		hPanel = new HabitPanel(title, temp2, desc, 0, temp1);
@@ -172,13 +168,16 @@ public class Habit {
 		curExp += inExp;
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
-			userExp += 1;
+			Main.exp += 1;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
 		}
-		if(userExp >= 10) {
-			userLvl += 1;
+		System.out.println(Main.exp);
+		if(Main.exp >= 10) {
+			Main.exp = 0;
+			Main.lvl += 1;
+			System.out.println("Level Up");
 		}
 	}
 }
