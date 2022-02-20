@@ -1,12 +1,16 @@
 package hackoverflow.main;
 import java.awt.*;
 
+import hackoverflow.pages.DailyHabitsPage;
 import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.MainPage;
+import hackoverflow.pages.MonthlyHabitsPage;
 import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.ShopPage;
+import hackoverflow.pages.WeeklyHabitsPage;
+import hackoverflow.pages.YearlyHabitsPage;
 import hackoverflow.popups.InstructionPopup;
 import hackoverflow.popups.StartPopup;
 
@@ -20,6 +24,11 @@ public class Main {
 	private static ProfilePage pPage;
 	private static HabitsPage hPage;
 	private static ShopPage sPage;
+	
+	private static DailyHabitsPage dlyPage;
+	private static WeeklyHabitsPage wlyPage;
+	private static MonthlyHabitsPage mlyPage;
+	private static YearlyHabitsPage ylyPage;
 
 	private static PageFrame startFrame;
 	
@@ -36,8 +45,13 @@ public class Main {
 	    //Pages
 	    mPage = new MainPage(startFrame);
 	    pPage = new ProfilePage(startFrame);
-	    hPage = new HabitsPage(startFrame);
+	    hPage = new HabitsPage();
 	    sPage = new ShopPage(startFrame);
+	    
+	    dlyPage = new DailyHabitsPage();
+	    wlyPage = new WeeklyHabitsPage();
+	    mlyPage = new MonthlyHabitsPage();
+	    ylyPage = new YearlyHabitsPage();
 
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
@@ -88,4 +102,45 @@ public class Main {
     	startFrame.validate();
     }
 
+    /**
+     * Switch from the currentPage to the Daily page
+     * @param currentPage the current page
+     */
+    public static void switchToDailyHabitsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(dlyPage);
+    	dlyPage.repaint();
+    	startFrame.validate();
+    }
+    /**
+     * Switch from the currentPage to the Weekly page
+     * @param currentPage the current page
+     */
+    public static void switchToWeeklyHabitsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(wlyPage);
+    	wlyPage.repaint();
+    	startFrame.validate();
+    }
+    /**
+     * Switch from the currentPage to the Monthly page
+     * @param currentPage the current page
+     */
+    public static void switchToMonthlyHabitsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(mlyPage);
+    	mlyPage.repaint();
+    	startFrame.validate();
+    }
+    
+    /**
+     * Switch from the currentPage to the Yearly page
+     * @param currentPage the current page
+     */
+    public static void switchToYearlyHabitsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(ylyPage);
+    	ylyPage.repaint();
+    	startFrame.validate();
+    }
 }

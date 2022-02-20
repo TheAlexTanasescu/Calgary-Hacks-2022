@@ -138,7 +138,7 @@ public class MainPage extends PagePanel {
 		PagePanel p = this;
 		dailyBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		Main.switchToHabitsPage(p);
+	    		Main.switchToDailyHabitsPage(p);
 	        }
 	    });
 	}
@@ -149,9 +149,10 @@ public class MainPage extends PagePanel {
 	private void createWeeklyBtn() {
 		weeklyBtn = new Button("Weekly");
 		weeklyBtn.setSize(freqBtnWidth, freqBtnHeight);
+		PagePanel p = this;
 		weeklyBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		//ImagePane.main("", "", null, null, "res/pet_moomask3.png");
+	    		Main.switchToWeeklyHabitsPage(p);
 	        }
 	    });
 	}
@@ -162,9 +163,10 @@ public class MainPage extends PagePanel {
 	private void createMonthlyBtn() {
 		monthlyBtn = new Button("Monthly");
 		monthlyBtn.setSize(freqBtnWidth, freqBtnHeight);
+		PagePanel p = this;
 		monthlyBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		//ImagePane.main("", "", null, null, "res/pet_moomask3.png");
+	    		Main.switchToMonthlyHabitsPage(p);
 	        }
 	    });
 	}
@@ -175,9 +177,10 @@ public class MainPage extends PagePanel {
 	private void createYearlyBtn() {
 		yearlyBtn = new Button("Yearly");
 		yearlyBtn.setSize(freqBtnWidth, freqBtnHeight);
+		PagePanel p = this;
 		yearlyBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		//ImagePane.main("", "", null, null, "res/pet_moomask3.png");
+	    		Main.switchToYearlyHabitsPage(p);
 	        }
 	    });
 	}
