@@ -16,42 +16,49 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import hackoverflow.main.Main;
+import hackoverflow.popups.StartPopup;
 
 
 public class ProfilePage extends PagePanel {
 
 	private static final long serialVersionUID = 7496382167255611538L;
 
-	public ProfilePage(PageFrame frame) {            
-        ImageIcon petIcon = new ImageIcon("res/pet_moomask3.png");
-        Image img = petIcon.getImage();
-        Image newimg = img.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH);
-        ImageIcon newIcon = new ImageIcon(newimg);
-    
+		String imageString = "res/pet_moomask3.png";
+		static String name = "Bull-Dozer";
+		String petName;
+		private static JLabel imageLabel;
+		public static JLabel petNameLbl;
+		
+	public ProfilePage() {            
+        
+		imageLabel = getImageIcon(imageString);
+		petName = getName();
 
-        JLabel label = new JLabel("Profile", SwingConstants.CENTER);
+		String nameThing = StartPopup.playerName + "'s Profile";
+        JLabel label = new JLabel(nameThing, SwingConstants.CENTER);
         label.setFont(new Font("Verdana", Font.PLAIN, 36));
-        JLabel imageLabel = new JLabel(newIcon);
+        
         JButton backBtn = new JButton("Back");
         JButton shopBtn = new JButton("Shop");
         
         JButton changeBtn = new JButton("Change Pet");
       
-        JLabel petName = new JLabel("PetName 3.0",SwingConstants.CENTER);
+        String petNameThing = "Current Pet: " + petName;
+        petNameLbl = new JLabel(petNameThing,SwingConstants.CENTER);
         
         setLayout(new BorderLayout(0, 20));
         
         
         JPanel petPanel = new JPanel();
         petPanel.setBorder(new EmptyBorder(40, 10, 10, 10));
-        petPanel.add(petName);
+        petPanel.add(petNameLbl);
         petPanel.add(imageLabel);
         
         petPanel.add(changeBtn);
         
         petPanel.setLayout(new BoxLayout(petPanel, BoxLayout.Y_AXIS));
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        petName.setAlignmentX(Component.CENTER_ALIGNMENT);
+        petNameLbl.setAlignmentX(Component.CENTER_ALIGNMENT);
         changeBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
       
         
@@ -73,10 +80,50 @@ public class ProfilePage extends PagePanel {
                 Main.switchToShopsPage(pg);
             }
         });
+        
+        changeBtn.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                Main.switchToChangePetPage(pg);
+            }
+        });
+        
+        
     
-        setVisible(true);           //set frame visibilty true.
+        setVisible(true);  //set frame visibilty true.
+        this.validate();
 
     }
+	
+	public static JLabel getImageIcon(String icon) {
+		
+		ImageIcon petIcon = new ImageIcon(icon);
+        Image img = petIcon.getImage();
+        Image newimg = img.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH);
+        ImageIcon newIcon = new ImageIcon(newimg);
+        JLabel imageLabel = new JLabel(newIcon);
+		return imageLabel;
+		
+	}
+	
+	public static void setImageIcon(String icon) {
+		
+		ImageIcon petIcon = new ImageIcon(icon);
+        Image img = petIcon.getImage();
+        Image newimg = img.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH);
+        ImageIcon newIcon = new ImageIcon(newimg);
+        imageLabel.setIcon(newIcon);
+	
+		
+	}
+	public  String getName() {
+		return this.name;
+	}
+	
+	public  void setName(String nameToChange)
+	{
+		petNameLbl.setText(nameToChange);
+	}
 
 
 }

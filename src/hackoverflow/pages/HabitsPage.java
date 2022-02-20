@@ -71,7 +71,7 @@ public class HabitsPage extends PagePanel {
 //		inPanel.add(new HabitPanel());
 //		inPanel.add(new HabitPanel());
 		// End test
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 0.7;
 		c.weighty = 0.8;
 		c.gridx = 0;

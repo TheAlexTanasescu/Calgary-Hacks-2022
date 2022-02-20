@@ -1,7 +1,11 @@
 package hackoverflow.main;
 import java.awt.*;
 
+
+import hackoverflow.pages.ChangePetPage;
+
 import hackoverflow.pages.DailyHabitsPage;
+
 import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.MainPage;
 import hackoverflow.pages.MonthlyHabitsPage;
@@ -11,7 +15,6 @@ import hackoverflow.pages.ProfilePage;
 import hackoverflow.pages.ShopPage;
 import hackoverflow.pages.WeeklyHabitsPage;
 import hackoverflow.pages.YearlyHabitsPage;
-import hackoverflow.popups.InstructionPopup;
 import hackoverflow.popups.StartPopup;
 
 
@@ -24,7 +27,9 @@ public class Main {
 	private static ProfilePage pPage;
 	private static HabitsPage hPage;
 	private static ShopPage sPage;
-	
+
+	private static ChangePetPage cPage;
+
 	private static DailyHabitsPage dlyPage;
 	private static WeeklyHabitsPage wlyPage;
 	private static MonthlyHabitsPage mlyPage;
@@ -41,14 +46,10 @@ public class Main {
     	exp = 0;
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
-	    
-	   
 
 	    //Panel
-    	InstructionPopup popup = new InstructionPopup();
-    	StartPopup startPopup = new StartPopup();
+    	new StartPopup();
 	    
-	    //Pages
 	    mPage = new MainPage(startFrame, exp, exp);
 	    pPage = new ProfilePage(startFrame);
 	    hPage = new HabitsPage(lvl, exp);
@@ -58,6 +59,7 @@ public class Main {
 	    wlyPage = new WeeklyHabitsPage(lvl, exp);
 	    mlyPage = new MonthlyHabitsPage(lvl, exp);
 	    ylyPage = new YearlyHabitsPage(lvl, exp);
+
 
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
@@ -105,6 +107,13 @@ public class Main {
     	startFrame.remove(currentPage);
     	startFrame.add(sPage);
     	sPage.repaint();
+    	startFrame.validate();
+    }
+    
+    public static void switchToChangePetPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(cPage);
+    	cPage.repaint();
     	startFrame.validate();
     }
 

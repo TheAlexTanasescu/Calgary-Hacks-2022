@@ -75,6 +75,7 @@ public class ImagePane {
 			inPanel.add(habit.getHabitPanel());
 			inPanel.revalidate();
 			inPanel.repaint();
+
 		    if (habitTitle.getText().equals("h") && description.getText().equals("h")) {
 		        //System.out.println("Login successful");
 		    } else {
