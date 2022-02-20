@@ -1,15 +1,14 @@
 package hackoverflow.pages;
 
-import java.awt.BorderLayout;
+
+import javax.swing.JComboBox;
+
 import java.awt.Button;
 import java.awt.Color;
-
-import java.awt.*;  
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import java.awt.GridBagConstraints;
 import hackoverflow.main.Main;
+import hackoverflow.popups.ImagePane;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,10 +27,12 @@ public class HabitsPage extends PagePanel {
 		this.setVisible(true);
 		
 		profileBtn = new Button("Profile");
-		
 		profileBtn.setBounds(40, 30, 100, 40);
 		this.add(profileBtn);
 		HabitsPage page = this;
+
+		profileBtn.setBounds(40, 30, 100, 40);
+		this.add(profileBtn);
 		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		Main.switchToProfilePage(frame, page);
@@ -45,7 +46,7 @@ public class HabitsPage extends PagePanel {
 		this.add(addHabit);
 		addHabit.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.print("Adding Habit");
+	    		ImagePane.main("Enter Name of Habit you want to add", "Add Habit", null, null, null);
 	        }
 	    });
 	}
@@ -60,3 +61,4 @@ public class HabitsPage extends PagePanel {
 	    });
 	}
 }
+

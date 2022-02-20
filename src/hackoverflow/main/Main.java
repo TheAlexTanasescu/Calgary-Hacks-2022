@@ -52,5 +52,12 @@ public class Main {
     	frame.add(hPage);
     	frame.validate();
     }
+    
+
+    public static void switchPanels(PageFrame frame, PagePanel currentPanel, PagePanel newPanel) {
+    	frame.remove(currentPanel);
+    	frame.add(newPanel);
+    	frame.validate();
+    }
 
 }
