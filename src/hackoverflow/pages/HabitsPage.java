@@ -72,18 +72,11 @@ public class HabitsPage extends PagePanel {
 		JPanel topPanel = new JPanel();
 		
 		Button profile = new Button("Profile");
-		//topPanel.setBounds(320, 30, 200, 40);
-		//topPanel.add(addHabit);
-		//this.add(addHabit);
 		c.fill = GridBagConstraints.HORIZONTAL;
-//		gb.weightx = 0.5;
-//		gb.gridx = 1;
-//		gb.gridy = -1;
 		topPanel.add(profile, c);
 		profile.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.println("Profile");
-	    		//ImagePane.main("", "", null, null, "res/pet_moomask3.png");
 	        }
 	    });
 		
@@ -151,28 +144,17 @@ public class HabitsPage extends PagePanel {
 		this.add(yearlyBtn, c);
 	}
 	
+	/**
+	 * 
+	 */
 	private void initButtons() {
 		//this.setLayout(null);
 		this.setVisible(true);
 		
-		profileBtn = new Button("Profile");
-		HabitsPage page = this;
-		profileBtn.setBounds(40, 30, 100, 40);
-		//this.add(profileBtn);
-		profileBtn.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		Main.switchToProfilePage(frame, page);
-	        }  
-	    });
+		createProfileBtn();
 		
-		Button addHabit = new Button("Add Habit");
-		addHabit.setBounds(320, 30, 100, 40);
-		//this.add(addHabit);
-		addHabit.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		ImagePane.main("", "", null, null, "res/pet_moomask3.png");
-	        }
-	    });
+		createAddHabitBtn();
+		
 		
 		createDailyBtn();
 		createWeeklyBtn();
@@ -189,6 +171,33 @@ public class HabitsPage extends PagePanel {
 		frame.validate();
 	}
 	
+	private void createProfileBtn() {
+		profileBtn = new Button("Profile");
+		HabitsPage page = this;
+		profileBtn.setBounds(40, 30, 100, 40);
+		//this.add(profileBtn);
+		profileBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		Main.switchToProfilePage(frame, page);
+	        }  
+	    });
+	}
+	
+	private void createAddHabitBtn() {
+		addHabitBtn = new Button("Add Habit");
+		HabitsPage page = this;
+		addHabitBtn.setBounds(40, 30, 100, 40);
+		//this.add(profileBtn);
+		addHabitBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		Main.switchToProfilePage(frame, page);
+	        }  
+	    });
+	}
+	
+	/**
+	 * Create Button for daily habits
+	 */
 	private void createDailyBtn() {
 		dailyBtn = new Button("Daily");
 		dailyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -199,6 +208,9 @@ public class HabitsPage extends PagePanel {
 	    });
 	}
 	
+	/**
+	 * Create Button for weekly habits
+	 */
 	private void createWeeklyBtn() {
 		weeklyBtn = new Button("Weekly");
 		weeklyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -208,6 +220,10 @@ public class HabitsPage extends PagePanel {
 	        }
 	    });
 	}
+	
+	/**
+	 * Create Button for monthly habits
+	 */
 	private void createMonthlyBtn() {
 		monthlyBtn = new Button("Monthly");
 		monthlyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -218,6 +234,9 @@ public class HabitsPage extends PagePanel {
 	    });
 	}
 	
+	/**
+	 * Create Button for yearly habits
+	 */
 	private void createYearlyBtn() {
 		yearlyBtn = new Button("Yearly");
 		yearlyBtn.setSize(freqBtnWidth, freqBtnHeight);
@@ -344,16 +363,5 @@ public class HabitsPage extends PagePanel {
 			setHabitExp(tempEXP);
 		}
 	}
-	
-	/*
-	private void addHabit() {
-		addHabitBtn = new Button("Add Habit");
-		this.add(addHabitBtn);
-		addHabitBtn.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.print("Adding Habit");
-	        }  
-	    });
-	}*/
 }
 
