@@ -97,7 +97,7 @@ public class HabitPanel extends JPanel {
 		this.add(prgBar, c);
 		
 		// Complete habit button
-		Button completeBtn = new Button("Complete");
+		completeBtn = new Button("Complete");
 		c.weightx = 0.5;
 		c.gridx = 0;
 		c.gridy = 3;

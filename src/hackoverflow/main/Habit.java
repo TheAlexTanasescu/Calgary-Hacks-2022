@@ -23,9 +23,9 @@ public class Habit {
 	 * @param inDesc
 	 * @param inFreq
 	 */
-	public Habit(String inTitle, String inDesc, Frequency inFreq) {
+	public Habit(String inTitle, String inDesc) {
 		setHabitTitle(inTitle);
-		setHabitFrequency(inFreq);
+		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(1);
 		this.levelExp = 0;
@@ -35,7 +35,9 @@ public class Habit {
 		Button cmpBtn = hPanel.getCmpBtn();
 		cmpBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.println("Pressed");
 	    		updateHabitExp(2);
+	    		hPanel.update(curExp);
 	        }
 	    });
 	}

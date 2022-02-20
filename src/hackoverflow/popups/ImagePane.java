@@ -39,21 +39,21 @@ public class ImagePane {
         JRadioButton checkBox2 = new JRadioButton("Weekly");  
         JRadioButton checkBox3 = new JRadioButton("Monthly");  
         JRadioButton checkBox4 = new JRadioButton("Yearly");  
-        checkBox1.setBounds(100,100, 50,50); 
-        checkBox2.setBounds(100,150, 50,50);  
-        checkBox3.setBounds(100,100, 50,50);  
-        checkBox4.setBounds(100,150, 50,50);  
-        
-        
-        ButtonGroup bg = new ButtonGroup();    
-        bg.add(checkBox1);
-        bg.add(checkBox2); 
-        bg.add(checkBox3);
-        bg.add(checkBox4);
+//        checkBox1.setBounds(100,100, 50,50); 
+//        checkBox2.setBounds(100,150, 50,50);  
+//        checkBox3.setBounds(100,100, 50,50);  
+//        checkBox4.setBounds(100,150, 50,50);  
+//        
+//        
+//        ButtonGroup bg = new ButtonGroup();    
+//        bg.add(checkBox1);
+//        bg.add(checkBox2); 
+//        bg.add(checkBox3);
+//        bg.add(checkBox4);
 		Object[] messageArr = {
 		    "Title:", habitTitle,
 		    "Description:", description,
-		    "Frequency:", checkBox1, checkBox2, checkBox3, checkBox4
+		    //"Frequency:", checkBox1, checkBox2, checkBox3, checkBox4
 		    
 		};
 
@@ -71,17 +71,7 @@ public class ImagePane {
 		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, newIcon, options, null);
 		if (option == JOptionPane.OK_OPTION) {
 			System.out.println("WOW");
-			Frequency frequency = null;
-			if(checkBox1.isSelected()) {
-				frequency = Frequency.Daily;
-			} else if(checkBox2.isSelected()) {
-				frequency = Frequency.Weekly;
-			} else if(checkBox3.isSelected()) {
-				frequency = Frequency.Monthly;
-			} else if(checkBox4.isSelected()) {
-				frequency = Frequency.Anually;
-			}
-			Habit habit = new Habit(habitTitle.getText(), description.getText(), frequency);
+			Habit habit = new Habit(habitTitle.getText(), description.getText());
 			inPanel.add(habit.getHabitPanel());
 			inPanel.revalidate();
 			inPanel.repaint();
