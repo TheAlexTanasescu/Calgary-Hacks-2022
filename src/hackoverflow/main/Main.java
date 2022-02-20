@@ -6,7 +6,9 @@ import hackoverflow.pages.MainPage;
 import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
+import hackoverflow.pages.ShopPage;
 import hackoverflow.popups.InstructionPopup;
+import hackoverflow.popups.StartPopup;
 
 
 public class Main {
@@ -17,20 +19,26 @@ public class Main {
 	private static MainPage mPage;
 	private static ProfilePage pPage;
 	private static HabitsPage hPage;
-	
+	private static ShopPage sPage;
+
 	private static PageFrame startFrame;
 	
     public static void main(String[] args) {
     	// Frame
 	    startFrame = new PageFrame(width, height, title);
+	    
+	   
 
 	    //Panel
     	InstructionPopup popup = new InstructionPopup();
+    	StartPopup startPopup = new StartPopup();
 	    
-	    //Panel
+	    //Pages
 	    mPage = new MainPage(startFrame);
 	    pPage = new ProfilePage(startFrame);
 	    hPage = new HabitsPage(startFrame);
+	    sPage = new ShopPage(startFrame);
+
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
 	 	
@@ -69,5 +77,15 @@ public class Main {
     	startFrame.validate();
     }
     
+    /**
+     * Switch from the currentPage to the Shop page
+     * @param currentPage the current page
+     */
+    public static void switchToShopsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(sPage);
+    	sPage.repaint();
+    	startFrame.validate();
+    }
 
 }

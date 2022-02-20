@@ -52,7 +52,8 @@ public class HabitsPage extends PagePanel {
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setViewportView(inPanel);
 		// Test Habits
-		inPanel.add(new HabitPanel());
+		/*
+		inPanel.add(new HabitPanel(name, flags, name, flags));
 		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		inPanel.add(new HabitPanel());
 		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -60,7 +61,7 @@ public class HabitsPage extends PagePanel {
 		inPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		inPanel.add(new HabitPanel());
 		inPanel.add(new HabitPanel());
-		inPanel.add(new HabitPanel());
+		inPanel.add(new HabitPanel());*/
 		// End test
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 0.7;

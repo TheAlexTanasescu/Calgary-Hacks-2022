@@ -84,7 +84,7 @@ public class HPTopPanel extends JPanel {
 		c.insets = new Insets(10, 40, 10, 5);
 		addBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		new ImagePane(null, null, null, null, imgPath);
+	    		new ImagePane(null, null, null, imgPath);
 	        }  
 	    });
 		this.add(addBtn, c);

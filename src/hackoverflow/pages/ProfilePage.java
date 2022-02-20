@@ -67,8 +67,12 @@ public class ProfilePage extends PagePanel {
                 Main.switchToMainPage(pg);
             }
         });
-        setSize(300,300);        //setting size.
-        setName("StudyTonight");  //setting title.
+        shopBtn.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                Main.switchToShopsPage(pg);
+            }
+        });
     
         setVisible(true);           //set frame visibilty true.
 
