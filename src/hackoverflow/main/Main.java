@@ -8,6 +8,7 @@ import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
+import hackoverflow.popups.InstructionPopup;
 
 
 public class Main {
@@ -20,7 +21,9 @@ public class Main {
 	
     public static void main(String[] args) {
     	// Frame
-	    PageFrame startFrame = new PageFrame(width, height, title);
+    	PageFrame startFrame = new PageFrame(width, height, title);
+    	InstructionPopup popup = new InstructionPopup();
+	    
 
 	    //Panel
 	    hPage = new HabitsPage(startFrame);
