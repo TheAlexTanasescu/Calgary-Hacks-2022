@@ -1,6 +1,8 @@
 package hackoverflow.main;
 public class Habit {
 	int level;
+	int curExp;
+	int levelExp;
 	String title;
 	String desc;
 	Frequency freq;
@@ -16,6 +18,32 @@ public class Habit {
 		setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(0);
+		this.levelExp = 0;
+		this.curExp = 0;
+	}
+	
+	/**
+	 * Gives the current amount of EXP
+	 * @return curExp
+	 */
+	int getHabitCurExp() {
+		return this.curExp;
+	}
+	
+	/**
+	 * Gives the current amount of EXP needed for next Level
+	 * @return levelExp
+	 */
+	int getHabitLevelExp() {
+		return this.levelExp;
+	}
+	
+	/**
+	 * Gets the level of the habit
+	 * @return
+	 */
+	int getHabitLevel() {
+		return this.level;
 	}
 	
 	/**
@@ -72,5 +100,42 @@ public class Habit {
 	 */
 	void setHabitLevel (int inLevel) {
 		this.level = inLevel;
+	}
+	
+	/**
+	 * Sets the amount of EXP needed for next Level
+	 * @param inLevel
+	 */
+	void setHabitLevelExp (int inLevel) {
+		this.levelExp = (int) Math.pow(inLevel, 1.5);
+	}
+	
+	/**
+	 * Sets the current EXP based on inExp
+	 * @param inExp
+	 */
+	void setHabitExp (int inExp) {
+		this.curExp = inExp;
+	}
+	
+	/**
+	 * Adds an amount of EXP to current EXP
+	 * @param inExp
+	 */
+	void addHabitExp (int inExp) {
+		this.curExp += inExp;
+	}
+	
+	/**
+	 * Updates the Exp and level
+	 * @param inExp
+	 */
+	void updateHabitExp(int inExp) {
+		if(curExp >= levelExp) {
+			int tempEXP = curExp - levelExp;
+			setHabitLevel(getHabitLevel() + 1);
+			setHabitLevelExp(getHabitLevel());
+			setHabitExp(tempEXP);
+		}
 	}
 }

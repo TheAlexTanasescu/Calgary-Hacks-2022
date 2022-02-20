@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class Main {
-
+	public HabitsPage hp;
 	public final static int width = 480;
 	public final static int height = 480;
 	private final static String title = "Start Page";
@@ -20,23 +20,14 @@ public class Main {
 	
     public static void main(String[] args) {
 	    PageFrame startFrame = new PageFrame(width, height, title);
-	 	PagePanel startPanel = new PagePanel(startFrame);
-	 	startFrame.add(startPanel);
-	 	startPanel.setBackground(Color.red);
-	 	
-	 	Scanner reader = new Scanner(System.in);  // Reading from System.in
-	 	System.out.println("Enter a number: ");
-	 	int n = reader.nextInt(); // Scans the next token of the input as an int.
-	 	//once finished
-	 	reader.close();
-	 	
-	 	test(startFrame, startPanel);
+	 	  PagePanel startPanel = new PagePanel(startFrame);
+	 	  startFrame.add(startPanel);
+	 	  test(startFrame, startPanel);
     }
     
     private static void test(PageFrame frame, PagePanel panel) {
-    	
     	frame.remove(panel);
-    	frame.add(new PageProfile(frame));
+    	frame.add(new HabitsPage(frame));
     	frame.validate();
     }
 }
