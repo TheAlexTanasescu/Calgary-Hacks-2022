@@ -32,13 +32,14 @@ public class Habit {
 		this.curExp = 0;
 		
 		int temp1 = getHabitLevelExp();
-		hPanel = new HabitPanel(title, 1, desc, 0, temp1);
+		int temp2 = getHabitLevel();
+		hPanel = new HabitPanel(title, temp2, desc, 0, temp1);
 		Button cmpBtn = hPanel.getCmpBtn();
 		cmpBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.println("Pressed");
 	    		updateHabitExp(2);
-	    		hPanel.update(curExp, levelExp);
+	    		hPanel.update(curExp, levelExp, level);
 	        }
 	    });
 

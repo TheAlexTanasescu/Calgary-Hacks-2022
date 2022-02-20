@@ -112,9 +112,12 @@ public class HabitPanel extends JPanel {
 		this.add(completeBtn, c);
 	}
 	
-	public void update(int progress, int max) {
+	public void update(int progress, int max, int level) {
 		prgBar.setValue(progress);
 		prgBar.setMaximum(max);
+		String lvl = String.valueOf(level);
+		System.out.println(lvl);
+		lvlLbl.setText(lvl);
 	}
 	
 	public Button getCmpBtn() {
