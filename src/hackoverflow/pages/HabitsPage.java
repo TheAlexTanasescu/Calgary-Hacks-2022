@@ -1,25 +1,29 @@
 package hackoverflow.pages;
 
+import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
-import java.awt.GridBagLayout;
+
 import java.awt.*;  
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-
 import java.awt.GridBagConstraints;
+import hackoverflow.main.Main;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HabitsPage extends PagePanel {
 	private static final long serialVersionUID = 25974988494620193L;
+	private Button addHabitBtn;
+	private Button profileBtn;
 
-	public HabitsPage(JFrame frame) {
-		super(frame);
+	public HabitsPage(PageFrame frame) {
+		this.setName("Habits Page");
 		this.setBackground(Color.LIGHT_GRAY);
 		initButtons(frame);
 	}
-
+	
 	public void initButtons(JFrame frame) {
 		int test = 0;
 		GridBagConstraints gb = new GridBagConstraints();
@@ -68,14 +72,9 @@ public class HabitsPage extends PagePanel {
 	}
 	
 	public void addHabit() {
-		GridBagConstraints gb = new GridBagConstraints();
-		this.setLayout(new GridBagLayout());
-		this.setVisible(true);
-		
-		
-		Button addHabit = new Button("Add Habit");
-		this.add(addHabit);
-		addHabit.addActionListener(new ActionListener() {
+		addHabitBtn = new Button("Add Habit");
+		this.add(addHabitBtn);
+		addHabitBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.print("Adding Habit");
 	        }  
