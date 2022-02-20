@@ -8,6 +8,7 @@ import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
+import hackoverflow.pages.ShopPage;
 import hackoverflow.popups.InstructionPopup;
 import hackoverflow.popups.StartPopup;
 
@@ -19,6 +20,7 @@ public class Main {
 	
 	private static MainPage mPage;
 	private static ProfilePage pPage;
+	private static ShopPage sPage;
 	private static PageFrame startFrame;
 	
     public static void main(String[] args) {
@@ -34,6 +36,7 @@ public class Main {
 	    //Panel
 	    mPage = new MainPage(startFrame, "Title", "Description", null);
 	    pPage = new ProfilePage(startFrame);
+	    sPage = new ShopPage(startFrame);
 	 	startFrame.add(mPage);
 	 	startFrame.validate();
 	 	
@@ -60,6 +63,14 @@ public class Main {
     	mPage.repaint();
     	startFrame.validate();
     }
+    
+    public static void switchToShopsPage(PagePanel currentPage) {
+    	startFrame.remove(currentPage);
+    	startFrame.add(sPage);
+    	sPage.repaint();
+    	startFrame.validate();
+    }
+    
     
 
 }
