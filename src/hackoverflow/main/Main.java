@@ -22,7 +22,7 @@ public class Main {
 
 	    //Panel
 	 	PagePanel startPanel = new PagePanel();
-	 	startFrame.add(new HabitsPage(startFrame));
+	 	startFrame.add(new HabitsPage(startFrame, "Title", "Description", null));
 	 	
 	 	startFrame.validate();
 	 	
