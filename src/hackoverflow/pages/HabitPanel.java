@@ -83,6 +83,8 @@ public class HabitPanel extends JPanel {
 		this.add(descTxtField, c);
 			
 		//Progress Bar
+		System.out.println(MaxEXP);
+		System.out.println(EXP);
 		prgBar = new JProgressBar();
 		prgBar.setMaximum(MaxEXP);
 		prgBar.setValue(EXP);
@@ -107,11 +109,12 @@ public class HabitPanel extends JPanel {
 		c.gridwidth = 3;
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(20,50,10,50);
-		this.add(completeBtn, c);	
+		this.add(completeBtn, c);
 	}
 	
-	public void update(int progress) {
+	public void update(int progress, int max) {
 		prgBar.setValue(progress);
+		prgBar.setMaximum(max);
 	}
 	
 	public Button getCmpBtn() {
