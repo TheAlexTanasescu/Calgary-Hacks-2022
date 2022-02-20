@@ -26,10 +26,11 @@ public class Main {
 	    
 
 	    //Panel
+	 	PagePanel startPanel = new PagePanel();
+	 	startFrame.add(new HabitsPage(startFrame, "Title", "Description", null));
 	    hPage = new HabitsPage(startFrame);
 	    pPage = new ProfilePage(startFrame);
 	 	startFrame.add(hPage);
-	 	
 	 	startFrame.validate();
 	 	
     }
@@ -42,6 +43,7 @@ public class Main {
     public static void switchToProfilePage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(pPage);
+    	pPage.repaint();
     	frame.validate();
     }
     
@@ -53,6 +55,7 @@ public class Main {
     public static void switchToHabitsPage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(hPage);
+    	hPage.repaint();
     	frame.validate();
     }
     
