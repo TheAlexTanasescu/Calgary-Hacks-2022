@@ -28,7 +28,7 @@ public class Habit {
 		//setHabitFrequency(inFreq);
 		setHabitDesc(inDesc);
 		setHabitLevel(1);
-		this.levelExp = 0;
+		setHabitLevelExp(level);
 		this.curExp = 0;
 		
 		int temp1 = getHabitLevelExp();
@@ -140,7 +140,7 @@ public class Habit {
 	 * @param inLevel
 	 */
 	void setHabitLevelExp (int inLevel) {
-		this.levelExp = (int) Math.pow(inLevel, 1.5);
+		this.levelExp = inLevel * 5;
 	}
 	
 	/**
