@@ -1,6 +1,7 @@
 package hackoverflow.pages;
 
 import java.awt.Button;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -23,6 +24,7 @@ import hackoverflow.popups.InstructionPopup;
 public class TopPanel extends JPanel {
 	private static final long serialVersionUID = -3265096636542863671L;
 	private String imgPath = "res/pet_moomask1.png";
+	private String bckImgPath = "res/headerbg.png";
 	
 	public TopPanel(PagePanel currentPanel) {
 		super();
@@ -36,6 +38,7 @@ public class TopPanel extends JPanel {
 	private void initLayout(PagePanel currentPanel) {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
+		
 		
 		// Create profile image
 		ImageIcon profileImg = new ImageIcon(imgPath);
@@ -92,5 +95,14 @@ public class TopPanel extends JPanel {
 	        }  
 	    });
 		this.add(helpBtn, c);
+	}
+	
+	@Override
+	  protected void paintComponent(Graphics g) {
+		ImageIcon backImg = new ImageIcon(bckImgPath);
+		Image img = backImg.getImage();
+		Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
+	    super.paintComponent(g);
+	    g.drawImage(newimg, 0, 0, null);
 	}
 }
