@@ -8,6 +8,7 @@ import hackoverflow.pages.PageFrame;
 import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 import hackoverflow.pages.ProfilePage;
+import hackoverflow.popups.InstructionPopup;
 
 
 public class Main {
@@ -15,7 +16,7 @@ public class Main {
 	public final static int height = 720;
 	private final static String title = "Hackoverflow";
 	
-	private static MainPage hPage;
+	private static MainPage mPage;
 	private static ProfilePage pPage;
 	private static PageFrame startFrame;
 	
@@ -24,10 +25,12 @@ public class Main {
 	    startFrame = new PageFrame(width, height, title);
 
 	    //Panel
-	    hPage = new MainPage(startFrame);
+    	InstructionPopup popup = new InstructionPopup();
+	    
+	    //Panel
+	    mPage = new MainPage(startFrame, "Title", "Description", null);
 	    pPage = new ProfilePage(startFrame);
-	 	startFrame.add(hPage);
-	 	
+	 	startFrame.add(mPage);
 	 	startFrame.validate();
 	 	
     }
@@ -49,8 +52,8 @@ public class Main {
      */
     public static void switchToHabitsPage(PagePanel currentPage) {
     	startFrame.remove(currentPage);
-    	startFrame.add(hPage);
-    	hPage.repaint();
+    	startFrame.add(mPage);
+    	mPage.repaint();
     	startFrame.validate();
     }
     

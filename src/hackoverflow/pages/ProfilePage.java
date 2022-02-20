@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-
 import hackoverflow.main.Main;
 
 
 public class ProfilePage extends PagePanel {
+
 	private static final long serialVersionUID = 7496382167255611538L;
 
 	public ProfilePage(PageFrame frame) {            
@@ -73,5 +73,6 @@ public class ProfilePage extends PagePanel {
         setVisible(true);           //set frame visibilty true.
 
     }
+
 
 }
