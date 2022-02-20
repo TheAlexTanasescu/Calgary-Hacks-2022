@@ -2,7 +2,10 @@ package hackoverflow.main;
 
 import javax.swing.JLabel;
 
+import hackoverflow.pages.HabitPanel;
+
 public class Habit {
+	//private HabitPanel hPanel;
 	private int level;
 	int curExp;
 	int levelExp;
