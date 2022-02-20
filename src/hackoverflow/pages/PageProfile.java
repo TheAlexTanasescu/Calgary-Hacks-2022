@@ -13,8 +13,8 @@ public class PageProfile extends PagePanel {
 
 	public PageProfile(JFrame frame)
 	 
-	    {
-			
+	    {			super();
+
 	        Button btn=new Button("Helloo World");
 	        add(btn); 		//adding a new Button.
 	        setSize(300,300);        //setting size.

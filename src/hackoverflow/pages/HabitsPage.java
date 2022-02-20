@@ -1,67 +1,51 @@
 package hackoverflow.pages;
 
+import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
-import java.awt.GridBagLayout;
+
 import java.awt.*;  
 import javax.swing.JFrame;
-import javax.swing.JButton;
-import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HabitsPage extends PagePanel {
-	private static final long serialVersionUID = 25974988494620193L;
+    private static final long serialVersionUID = 25974988494620193L;
+    private Button addHabitBtn;
+    private Button profileBtn;
 
-	//buttons here
-	
-	
-	public HabitsPage(JFrame frame) {
-
-		this.setBackground(Color.LIGHT_GRAY);
-		initButtons(frame);
-	}
-	private static void test(PageFrame frame, PagePanel panel, PagePanel panel2) {
-    	frame.remove(panel);
-    	frame.add(panel2);
-    	frame.validate();
+    public HabitsPage(JFrame frame) {
+        this.setBackground(Color.LIGHT_GRAY);
+        initButtons(frame);
     }
+    
 
-	public void initButtons(JFrame frame) {
-		GridBagConstraints gb = new GridBagConstraints();
-		this.setLayout(new GridBagLayout());
-		this.setVisible(true);
-		
-		Button b = new Button("P");
-		this.add(b);
-		b.addActionListener(new ActionListener() {  
-	    	public void actionPerformed(ActionEvent e) {
-	    		frame.dispose();
-	    		System.out.print("Welcome to Javatpoint.");
-	    		
-	        }  
-	    });
-		
-		Button addHabit = new Button("Add Habit");
-		this.add(addHabit);
-		addHabit.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.print("Adding Habit");
-	        }
-	    });
-	}
-	
-	public void addHabit() {
-		GridBagConstraints gb = new GridBagConstraints();
-		this.setLayout(new GridBagLayout());
-		this.setVisible(true);
-		
-		
-		Button addHabit = new Button("Add Habit");
-		this.add(addHabit);
-		addHabit.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.print("Adding Habit");
-	        }  
-	    });
-	}
+    public void initButtons(JFrame frame) {
+        profileBtn = new Button("P");
+        this.add(profileBtn);
+        profileBtn.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                System.out.print("Welcome to Javatpoint.");
+            }  
+        });
+        
+        addHabitBtn = new Button("Add Habit");
+        this.add(addHabitBtn);
+        addHabitBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.print("Adding Habit");
+            }
+        });
+    }
+    
+    public void addHabit() {
+        addHabitBtn = new Button("Add Habit");
+        this.add(addHabitBtn);
+        addHabitBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.print("Adding Habit");
+            }  
+        });
+    }
 }

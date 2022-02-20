@@ -21,6 +21,7 @@ public class Main {
     	// Frame
 	    PageFrame startFrame = new PageFrame(width, height, title);
 
+
 	 //	PagePanel startPanel = new PagePanel(startFrame);
 	 	PagePanel habitPanel = new HabitsPage(startFrame);
 	 	PagePanel profilePage = new PageProfile(startFrame);
@@ -31,12 +32,11 @@ public class Main {
     }
     
     
-    
-    private static void switchToHabitsPage(PageFrame frame, PagePanel panel) {
+    public static void switchPanels(PageFrame frame, PagePanel currentPanel, PagePanel newPanel) {
+    	frame.remove(currentPanel);
+    	frame.add(newPanel);
+    	frame.validate();
 
-    	//frame.remove(panel);
-    	frame.add(panel);
-    	
     }
     
     
