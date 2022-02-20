@@ -13,23 +13,17 @@ public class Main {
 	public final static int width = 480;
 	public final static int height = 720;
 	private final static String title = "Hackoverflow";
+	private static HabitsPage hp;
 	
 	
     public static void main(String[] args) {
-	    PageFrame startFrame = new PageFrame(width, height, title);
-	 	//PagePanel startPanel = new PagePanel(startFrame);
-	    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		startFrame.setSize(1280, 720);
-		startFrame.setLocation((int)(screenSize.getWidth()/2 - startFrame.getSize().getWidth()/2), (int)(screenSize.getHeight()/2 - startFrame.getSize().getHeight()/2));
-		startFrame.setResizable(false);
-		startFrame.setTitle("HackOverflow");
-		startFrame.setVisible(true);
+    	hp = new HabitsPage();
+    	
+    	//Hopefully this works
+	   
 	 	
-	 	//test(startFrame, startPanel);
+	 
     }
     
-    private static void test(PageFrame frame, PagePanel panel) {
-    	frame.remove(panel);
-    	frame.add(new HabitsPage(frame));
-    }
+   
 }

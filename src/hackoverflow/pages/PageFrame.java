@@ -9,17 +9,18 @@ import javax.swing.JFrame;
 
 public class PageFrame extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
-	private HabitsPage hp;
+	private PagePanel panel;
 	
-	public PageFrame(int width, int height, String title) {	
+	public PageFrame() 
+	{	
 		// Initialize
 		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		hp = new HabitsPage(this);
+		panel = new PagePanel(this);
 		this.setLocation(0, 0);
 		this.setSize(this.getSize());
         this.setBackground(Color.LIGHT_GRAY);
         this.setVisible(true);
-        this.add(hp);
+        this.add(panel);
 
 		//this.setLocation((int)(screenSize.getWidth()/2 - this.getSize().getWidth()/2), (int)(screenSize.getHeight()/2 - this.getSize().getHeight()/2));
 		//this.setResizable(false);
