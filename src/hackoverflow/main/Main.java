@@ -44,6 +44,7 @@ public class Main {
     	frame.remove(currentPage);
     	frame.add(pPage);
     	frame.validate();
+    	pPage.repaint();
     }
     
     /**
@@ -55,6 +56,7 @@ public class Main {
     	frame.remove(currentPage);
     	frame.add(hPage);
     	frame.validate();
+    	hPage.repaint();
     }
     
 
