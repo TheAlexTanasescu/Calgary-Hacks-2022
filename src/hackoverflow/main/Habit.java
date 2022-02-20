@@ -2,7 +2,7 @@ package hackoverflow.main;
 
 import javax.swing.JLabel;
 
-public class Habit extends JLabel {
+public class Habit {
 	private int level;
 	int curExp;
 	int levelExp;

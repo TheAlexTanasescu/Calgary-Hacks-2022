@@ -39,6 +39,7 @@ public class Main {
     public static void switchToProfilePage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(pPage);
+    	pPage.repaint();
     	frame.validate();
     }
     
@@ -50,6 +51,7 @@ public class Main {
     public static void switchToHabitsPage(PageFrame frame, PagePanel currentPage) {
     	frame.remove(currentPage);
     	frame.add(hPage);
+    	hPage.repaint();
     	frame.validate();
     }
     
