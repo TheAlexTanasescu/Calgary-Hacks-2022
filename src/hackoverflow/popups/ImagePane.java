@@ -30,7 +30,7 @@ public class ImagePane {
 		JTextField habitTitle = new JTextField();
 		JTextArea description = new JTextArea(3,20);
 	    description.setLineWrap(true);
-	   description.setWrapStyleWord(true); 
+	    description.setWrapStyleWord(true); 
 		JRadioButton checkBox1 = new JRadioButton("Daily");   
         JRadioButton checkBox2 = new JRadioButton("Weekly");  
         JRadioButton checkBox3 = new JRadioButton("Monthly");  
