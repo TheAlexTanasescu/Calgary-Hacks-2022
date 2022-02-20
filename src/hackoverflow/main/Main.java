@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 
 import hackoverflow.pages.HabitsPage;
 import hackoverflow.pages.PageFrame;
+import hackoverflow.pages.PageLayout;
 import hackoverflow.pages.PagePanel;
 
 
@@ -16,15 +17,23 @@ public class Main {
 	
 	
     public static void main(String[] args) {
+    	// Frame
 	    PageFrame startFrame = new PageFrame(width, height, title);
-	 	PagePanel startPanel = new PagePanel(startFrame);
-	 	startFrame.add(startPanel);
+	    
+	    //Panel
+	 	PagePanel startPanel = new PagePanel();
+	 	startFrame.setContentPane(new HabitsPage());
 	 	
-	 	//test(startFrame, startPanel);
+	 	//Layout
+	 	PageLayout layout = new PageLayout();
+	 	layout.setGrid(startPanel);
+	 	
+	 	//switchToHabitsPage(startFrame, startPanel);
+	 	
     }
     
-    private static void test(PageFrame frame, PagePanel panel) {
+    private static void switchToHabitsPage(PageFrame frame, PagePanel panel) {
     	frame.remove(panel);
-    	frame.add(new HabitsPage(frame));
+    	frame.add(new HabitsPage());
     }
 }
