@@ -6,8 +6,6 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -22,15 +20,12 @@ import hackoverflow.main.Main;
 public class HabitPanel extends JPanel {
 	private static final long serialVersionUID = 4842251332912377960L;
 
-	private Habit habit;
 	private JProgressBar prgBar;
 	private JLabel lvlLbl;
 	private Button completeBtn;
 	
 	public HabitPanel(String title, int level, String description, int EXP, int MaxEXP) {
-		
 		super();
-		
 		this.setSize(Main.width - 40, 150);
 		this.setMaximumSize(new Dimension(Main.width, 150));
 		this.setBorder(BorderFactory.createLineBorder(Color.black));

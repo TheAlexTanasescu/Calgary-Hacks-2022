@@ -50,18 +50,15 @@ public class Main {
 	    //Panel
     	new StartPopup();
 	    
-    	//Pages
-	    mPage = new MainPage(startFrame);
-
-	    pPage = new ProfilePage();
-	    hPage = new HabitsPage();
-	    sPage = new ShopPage();
-	    cPage = new ChangePetPage();
-
-	    dlyPage = new DailyHabitsPage();
-	    wlyPage = new WeeklyHabitsPage();
-	    mlyPage = new MonthlyHabitsPage();
-	    ylyPage = new YearlyHabitsPage();
+	    mPage = new MainPage(startFrame, exp, exp);
+	    pPage = new ProfilePage(startFrame);
+	    hPage = new HabitsPage(lvl, exp);
+	    sPage = new ShopPage(startFrame);
+	    
+	    dlyPage = new DailyHabitsPage(lvl, exp);
+	    wlyPage = new WeeklyHabitsPage(lvl, exp);
+	    mlyPage = new MonthlyHabitsPage(lvl, exp);
+	    ylyPage = new YearlyHabitsPage(lvl, exp);
 
 
 	 	startFrame.add(mPage);

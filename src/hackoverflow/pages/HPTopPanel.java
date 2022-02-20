@@ -18,10 +18,14 @@ import hackoverflow.popups.ImagePane;
 public class HPTopPanel extends JPanel {
 	private static final long serialVersionUID = 5758091766734972758L;
 	
-	private String imgPath = "res/pet_justin1.png";
+	private String imgPath = "res/pet_moomask1.png";
+	int uLvl;
+	int uExp;
 	
-	public HPTopPanel(PagePanel currentPanel, JPanel inPanel) {
+	public HPTopPanel(PagePanel currentPanel, JPanel inPanel, int uL, int uE) {
 		super();
+		uLvl = uL;
+		uExp = uE;
 		initLayout(currentPanel, inPanel);
 		
 	}
@@ -85,7 +89,7 @@ public class HPTopPanel extends JPanel {
 		JPanel page = this;
 		addBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		new ImagePane(null, null, null, imgPath, inPanel);
+	    		new ImagePane(null, null, uLvl, uExp, imgPath, inPanel);
 	    		
 	    		page.validate();
 	    		page.repaint();
