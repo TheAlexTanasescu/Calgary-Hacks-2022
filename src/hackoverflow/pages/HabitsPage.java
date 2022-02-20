@@ -45,7 +45,7 @@ public class HabitsPage extends PagePanel {
 		this.add(addHabit);
 		addHabit.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		ImagePane.main("Enter Name of Habit you want to add", "Add Habit", null, null, null);
+	    		ImagePane.main("", "", null, null, "res/pet_moomask3.png");
 	        }
 	    });
 	}
