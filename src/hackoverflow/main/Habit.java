@@ -38,7 +38,7 @@ public class Habit {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.println("Pressed");
 	    		updateHabitExp(2);
-	    		hPanel.update(curExp);
+	    		hPanel.update(curExp, levelExp);
 	        }
 	    });
 
