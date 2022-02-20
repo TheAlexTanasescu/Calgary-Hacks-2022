@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
-public class HabitPanel extends JPanel{
+public class HabitPanel extends JPanel {
 
 	public HabitPanel() {
 		super();
