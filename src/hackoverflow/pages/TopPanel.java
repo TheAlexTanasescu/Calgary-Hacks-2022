@@ -21,7 +21,7 @@ import hackoverflow.main.Main;
  */
 public class TopPanel extends JPanel {
 	private static final long serialVersionUID = -3265096636542863671L;
-	private String imgPath = "res/pet_moomask1.png";
+	private String imgPath = "res/pet_justin1.png";
 	
 	public TopPanel(PagePanel currentPanel) {
 		super();
