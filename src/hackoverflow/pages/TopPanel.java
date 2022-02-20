@@ -26,7 +26,7 @@ public class TopPanel extends JPanel {
 
 	private String bckImgPath = "res/headerbg.png";
 	private String imgPath = "res/pet_justin1.png";
-
+	private static JLabel lvlLbl;
 	
 	public TopPanel(PagePanel currentPanel) {
 		super();
@@ -41,7 +41,17 @@ public class TopPanel extends JPanel {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		
+		// Create Lvl label
+		lvlLbl = new JLabel("Lvl: " + Main.lvl);
+		c.weightx = 0.7;
+		c.weighty = 0.1;
+		c.gridx = 0;
+		c.gridy = 0;
+		c.gridwidth = 1;
+		c.fill = GridBagConstraints.BOTH;
+		c.anchor = GridBagConstraints.PAGE_START;
+		c.insets = new Insets(20, 200, 0, 0);
+		this.add(lvlLbl, c);
 		// Create profile image
 		ImageIcon profileImg = new ImageIcon(imgPath);
 		Image img = profileImg.getImage();
@@ -54,12 +64,12 @@ public class TopPanel extends JPanel {
 		profileLbl.setIcon(profileImg);
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 0.7;
-		c.weighty = 0.7;
+		c.weighty = 0.5;
 		c.gridx = 0;
-		c.gridy = 0;
+		c.gridy = 1;
 		c.gridwidth = 1;
-		c.anchor = GridBagConstraints.FIRST_LINE_START;
-		c.insets = new Insets(0, 160, 0, 0);
+		c.anchor = GridBagConstraints.CENTER;
+		c.insets = new Insets(0, 160, 10, 0);
 		this.add(profileLbl, c);
 		
 		// Profile Button
@@ -68,10 +78,10 @@ public class TopPanel extends JPanel {
 		c.weightx = 0.5;
 		c.weighty = 0.2;
 		c.gridx = 0;
-		c.gridy = 1;
+		c.gridy = 2;
 		c.gridwidth = 1;
 		c.gridheight = 1;
-		c.anchor = GridBagConstraints.LINE_START;
+		c.anchor = GridBagConstraints.LAST_LINE_START;
 		c.insets = new Insets(0, 10, 5, 10);
 		profileBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
@@ -86,10 +96,10 @@ public class TopPanel extends JPanel {
 		c.weightx = 0.5;
 		c.weighty = 0.2;
 		c.gridx = 1;
-		c.gridy = 1;
+		c.gridy = 2;
 		c.gridwidth = 1;
 		c.gridheight = 1;
-		c.anchor = GridBagConstraints.LINE_END;
+		c.anchor = GridBagConstraints.LAST_LINE_END;
 		c.insets = new Insets(0, 10, 5, 10);
 		helpBtn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
@@ -99,12 +109,16 @@ public class TopPanel extends JPanel {
 		this.add(helpBtn, c);
 	}
 	
+	public static void updateLvlLbl() {
+		lvlLbl.setText("Lvl: " + Main.lvl);
+	}
+	
 	@Override
 	  protected void paintComponent(Graphics g) {
 		ImageIcon backImg = new ImageIcon(bckImgPath);
 		Image img = backImg.getImage();
-		Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
+		//Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
 	    super.paintComponent(g);
-	    g.drawImage(newimg, 0, 0, null);
+	    g.drawImage(img, 0, 0, null);
 	}
 }

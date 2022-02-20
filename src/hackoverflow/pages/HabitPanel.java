@@ -2,6 +2,7 @@ package hackoverflow.pages;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -31,6 +32,7 @@ public class HabitPanel extends JPanel {
 		super();
 		
 		this.setSize(Main.width - 40, 150);
+		this.setMaximumSize(new Dimension(Main.width, 150));
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridBagLayout());
 
@@ -119,6 +121,7 @@ public class HabitPanel extends JPanel {
 		String lvl = String.valueOf(level);
 		System.out.println(lvl);
 		lvlLbl.setText("Lvl: " + lvl);
+		TopPanel.updateLvlLbl();
 	}
 	
 	public Button getCmpBtn() {
