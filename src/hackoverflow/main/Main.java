@@ -17,8 +17,13 @@ public class Main {
 	
     public static void main(String[] args) {
 	    PageFrame startFrame = new PageFrame(width, height, title);
-	 	PagePanel startPanel = new PagePanel(startFrame);
-	 	startFrame.add(startPanel);
+	 	//PagePanel startPanel = new PagePanel(startFrame);
+	    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		startFrame.setSize(1280, 720);
+		startFrame.setLocation((int)(screenSize.getWidth()/2 - startFrame.getSize().getWidth()/2), (int)(screenSize.getHeight()/2 - startFrame.getSize().getHeight()/2));
+		startFrame.setResizable(false);
+		startFrame.setTitle("HackOverflow");
+		startFrame.setVisible(true);
 	 	
 	 	test(startFrame, startPanel);
     }
