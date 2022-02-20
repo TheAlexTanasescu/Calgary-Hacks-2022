@@ -73,7 +73,6 @@ public class HabitPanel extends JPanel {
 		c.insets = new Insets(5, 10, 5, 10);
 		this.add(descTxtField, c);
 			
-		//Progress Bar
 		JProgressBar prgBar = new JProgressBar();
 		prgBar.setValue(EXP);
 		prgBar.setStringPainted(true);
