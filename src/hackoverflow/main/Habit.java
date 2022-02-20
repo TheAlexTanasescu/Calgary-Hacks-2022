@@ -1,10 +1,14 @@
 package hackoverflow.main;
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import hackoverflow.pages.HabitPanel;
 
 import hackoverflow.pages.HabitPanel;
 
 public class Habit {
-	//private HabitPanel hPanel;
+
 	private int level;
 	int curExp;
 	int levelExp;
@@ -27,6 +31,13 @@ public class Habit {
 		this.levelExp = 0;
 		this.curExp = 0;
 		hPanel = new HabitPanel(title, 1, desc, 0);
+		
+		Button cmpBtn = hPanel.getCmpBtn();
+		cmpBtn.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		updateHabitExp(2);
+	        }
+	    });
 	}
 	
 	/**
@@ -146,13 +157,14 @@ public class Habit {
 	 * Updates the Exp and level
 	 * @param inExp
 	 */
-	void updateHabitExp(int inExp, HabitPanel hp) {
+	void updateHabitExp(int inExp) {
+		curExp += inExp;
 		if(curExp >= levelExp) {
 			int tempEXP = curExp - levelExp;
 			setHabitLevel(getHabitLevel() + 1);
 			setHabitLevelExp(getHabitLevel());
 			setHabitExp(tempEXP);
-			hp = new HabitPanel(title, level, desc, curExp);
+			//hp = new HabitPanel(title, level, desc, curExp);
 		}
 	}
 }

@@ -83,7 +83,7 @@ public class ImagePane {
 			}
 			Habit habit = new Habit(habitTitle.getText(), description.getText(), frequency);
 			inPanel.add(habit.getHabitPanel());
-			inPanel.validate();
+			inPanel.revalidate();
 			inPanel.repaint();
 		    if (habitTitle.getText().equals("h") && description.getText().equals("h")) {
 		        //System.out.println("Login successful");
