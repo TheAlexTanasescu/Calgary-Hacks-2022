@@ -27,7 +27,7 @@ public class StartPopup extends PagePanel {
 	{
 		JLabel intro = new JLabel("Let's begin with your name. What is it?");
 		JTextField name = new JTextField();
-		JLabel choice = new JLabel("I have four habpets from you to choose from. Which one do you pick?");
+		JLabel choice = new JLabel("I have four HabPets from you to choose from. Which one do you pick?");
 		
 		//JLabel first = new JLabel("Justin Beaver");
 		ImageIcon petIcon = new ImageIcon("res/pet_justin0.png");
@@ -68,10 +68,10 @@ public class StartPopup extends PagePanel {
 			intro,
 		    "Name", name,
 		    choice,
-		    "Habpet:\n", checkBox1,first, checkBox2, second, checkBox3, third, checkBox4, fourth
+		    "HabPet:\n", checkBox1,first, checkBox2, second, checkBox3, third, checkBox4, fourth
 		    
 		};
-		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+		int option = JOptionPane.showOptionDialog(null, messageArr, "Add New Habit", 0, JOptionPane.PLAIN_MESSAGE, null, null, null);
 		playerName = name.getText();
 		
 		if (checkBox1.isSelected())

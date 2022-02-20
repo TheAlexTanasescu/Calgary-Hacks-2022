@@ -3,6 +3,7 @@ package hackoverflow.pages;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -129,6 +130,15 @@ public class ProfilePage extends PagePanel {
 	public  void setName(String nameToChange)
 	{
 		petNameLbl.setText(nameToChange);
+	}
+	
+	@Override
+	  protected void paintComponent(Graphics g) {
+		ImageIcon backImg = new ImageIcon("");
+		Image img = backImg.getImage();
+		//Image newimg = img.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
+	    super.paintComponent(g);
+	    g.drawImage(img, 0, 0, null);
 	}
 
 

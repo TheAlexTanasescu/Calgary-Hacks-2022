@@ -51,14 +51,10 @@ public class Main {
 	    //Panel
     	new StartPopup();
 	    
-    	//Pages
 	    mPage = new MainPage(startFrame);
-
-	   
 	    hPage = new HabitsPage();
 	    sPage = new ShopPage();
-	    cPage = new ChangePetPage();
-
+	    
 	    dlyPage = new DailyHabitsPage();
 	    wlyPage = new WeeklyHabitsPage();
 	    mlyPage = new MonthlyHabitsPage();
