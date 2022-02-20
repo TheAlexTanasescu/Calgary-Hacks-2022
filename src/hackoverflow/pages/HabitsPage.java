@@ -6,12 +6,9 @@ import java.awt.Color;
 
 import java.awt.*;  
 import javax.swing.JFrame;
-<<<<<<< HEAD
-=======
 
 import hackoverflow.main.Main;
 
->>>>>>> f2ee6154f1d90f43283cce4490dd53d641d501d0
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,43 +17,8 @@ public class HabitsPage extends PagePanel {
     private Button addHabitBtn;
     private Button profileBtn;
 
-<<<<<<< HEAD
-    public HabitsPage(JFrame frame) {
-        this.setBackground(Color.LIGHT_GRAY);
-        initButtons(frame);
-    }
     
 
-    public void initButtons(JFrame frame) {
-        profileBtn = new Button("P");
-        this.add(profileBtn);
-        profileBtn.addActionListener(new ActionListener() {  
-            public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-                System.out.print("Welcome to Javatpoint.");
-            }  
-        });
-        
-        addHabitBtn = new Button("Add Habit");
-        this.add(addHabitBtn);
-        addHabitBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.print("Adding Habit");
-            }
-        });
-    }
-    
-    public void addHabit() {
-        addHabitBtn = new Button("Add Habit");
-        this.add(addHabitBtn);
-        addHabitBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.print("Adding Habit");
-            }  
-        });
-    }
-}
-=======
 	public HabitsPage(PageFrame frame) {
 		this.setName("Habits Page");
 		this.setBackground(Color.LIGHT_GRAY);
@@ -93,4 +55,4 @@ public class HabitsPage extends PagePanel {
 	    });
 	}
 }
->>>>>>> f2ee6154f1d90f43283cce4490dd53d641d501d0
+
