@@ -16,15 +16,22 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout.Alignment;
+
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import javax.swing.SwingConstants;
+
 
 import hackoverflow.main.Main;
 
@@ -37,6 +44,7 @@ public class ProfilePage extends PagePanel {
     public ProfilePage(PageFrame frame)
      
         {            
+
         
         
             ImageIcon petIcon = new ImageIcon("res/pet_moomask3.png");
@@ -84,6 +92,7 @@ public class ProfilePage extends PagePanel {
                 //adding a new Button.
             ProfilePage pg = this;
             backBtn.addActionListener(new ActionListener() {
+
                 public void actionPerformed(ActionEvent e) {
                     Main.switchToHabitsPage(frame, pg);
                 }
