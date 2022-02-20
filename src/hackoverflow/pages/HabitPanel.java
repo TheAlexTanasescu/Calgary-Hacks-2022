@@ -18,7 +18,7 @@ import hackoverflow.main.Main;
 public class HabitPanel extends JPanel {
 	private static final long serialVersionUID = 4842251332912377960L;
 
-	public HabitPanel(String title, int level, String description, int EXP) {
+	public HabitPanel(String title, int level, String description, int EXP, int MaxEXP) {
 		super();
 		this.setSize(Main.width - 40, 150);
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -74,6 +74,7 @@ public class HabitPanel extends JPanel {
 		this.add(descTxtField, c);
 			
 		JProgressBar prgBar = new JProgressBar();
+		prgBar.setMaximum(MaxEXP);
 		prgBar.setValue(EXP);
 		prgBar.setStringPainted(true);
 		prgBar.setSize(20, 100);
@@ -97,6 +98,5 @@ public class HabitPanel extends JPanel {
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(20,50,10,50);
 		this.add(completeBtn, c);
-		
 	}
 }
