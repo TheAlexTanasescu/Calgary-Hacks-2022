@@ -16,6 +16,7 @@ import hackoverflow.main.Habit;
 import hackoverflow.main.Main;
 
 public class HabitPanel extends JPanel {
+	private static final long serialVersionUID = 4842251332912377960L;
 
 	public HabitPanel(String title, int level, String description, int EXP) {
 		super();

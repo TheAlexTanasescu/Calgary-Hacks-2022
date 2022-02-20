@@ -14,10 +14,8 @@ import javax.swing.ScrollPaneConstants;
 
 public class HabitsPage extends PagePanel {
 	private static final long serialVersionUID = -7676600580151846300L;
-	private PageFrame frame;
 	
-	public HabitsPage(PageFrame frame) {
-		this.frame = frame;
+	public HabitsPage() {
 		init();
 	}
 	
@@ -32,8 +30,10 @@ public class HabitsPage extends PagePanel {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
+		JPanel inPanel = new JPanel();
+		
 		// Top pane
-		HPTopPanel tPanel = new HPTopPanel(this);
+		HPTopPanel tPanel = new HPTopPanel(this, inPanel);
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 1;
 		c.weighty = 0.1;
@@ -45,7 +45,7 @@ public class HabitsPage extends PagePanel {
 		this.add(tPanel, c);
 		
 		//Scroll Pane
-		JPanel inPanel = new JPanel();
+		
 		inPanel.setBackground(Color.WHITE);
 		inPanel.setLayout(new BoxLayout(inPanel, BoxLayout.PAGE_AXIS));
 		JScrollPane scrollPane = new JScrollPane();
@@ -63,7 +63,7 @@ public class HabitsPage extends PagePanel {
 		inPanel.add(new HabitPanel());
 		inPanel.add(new HabitPanel());*/
 		// End test
-		c.fill = GridBagConstraints.BOTH;
+		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.7;
 		c.weighty = 0.8;
 		c.gridx = 0;
@@ -74,5 +74,6 @@ public class HabitsPage extends PagePanel {
 		c.anchor = GridBagConstraints.CENTER;
 		this.add(scrollPane, c);
 	}
+
 
 }
